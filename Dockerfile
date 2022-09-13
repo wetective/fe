@@ -1,7 +1,6 @@
 FROM ruby:2.7.4
 
-RUN apt-get update -qq && apt-get install -y build-essential nodejs
+# RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+WORKDIR /fe
 
-ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh /wait-for-it.sh
-
-RUN chmod +x /wait-for-it.sh
+CMD ["rails", "server", "-b", "0.0.0.0"]
