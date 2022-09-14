@@ -3,20 +3,20 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2 
-  aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
+  # aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
 
 jobs:
   build:
     working_directory: ~/fe
     docker:
-      - image: cimg/ruby:3.1.2-node
+      - image: cimg/ruby:2.7.4-node
         environment:
           PGHOST: localhost
-          PGUSER: fe
+          PGUSER: user
           RAILS_ENV: test
       - image: postgres:14.4
         environment:
-          POSTGRES_USER: fe
+          POSTGRES_USER: user
           POSTGRES_DB: fe_test
           POSTGRES_PASSWORD:
     steps:
@@ -29,15 +29,15 @@ jobs:
       - checkout
       - run: bundle install --path vendor/bundle
       - run: bundle exec rspec
-  deploy:
-    executor: aws-elastic-beanstalk/default
-    steps:
-      - eb/deploy:
-          context: aws-creds
-          environment-name: fe
-          filters:
-            branches:
-              only:
-                - main
-          requires:
-            - build
+  # deploy:
+  #   executor: aws-elastic-beanstalk/default
+  #   steps:
+  #     - eb/deploy:
+  #         context: aws-creds
+  #         environment-name: fe
+  #         filters:
+  #           branches:
+  #             only:
+  #               - main
+  #         requires:
+  #           - build
