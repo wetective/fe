@@ -39,11 +39,11 @@ class Wanted
     @dates_of_birth_used = nil_to_s(data[:dates_of_birth_used])
   end
 
-  def nil_to_s(data)
-    data == nil ? data.to_s : data
+  def nil_to_s(key)
+    key == nil ? key.to_s : key
   end
 
-  def nil_to_a(data)
-    data == nil ? data.to_a : data
+  def nil_to_a(key)
+    key == nil ? key.to_a : key
   end
 end
