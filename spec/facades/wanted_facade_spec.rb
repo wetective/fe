@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe WantedFacade do
   describe '::create_wanted_list' do
     it 'returns a list of wanted persons objects', :vcr do
-      wanted = WantedFacade.create_wanted_list[1]
+      wanted = WantedFacade.create_wanted_list[2]
       
       expect(wanted.files).to be_a(String)
       expect(wanted.reward_text).to be_a(String)
