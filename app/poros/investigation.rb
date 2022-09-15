@@ -1,4 +1,4 @@
-class Wanted
+class Investigation
   attr_reader :files,
               :reward_text,
               :aliases,
