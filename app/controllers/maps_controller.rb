@@ -1,3 +1,7 @@
 class MapsController < ApplicationController
-  def index; end
+  def index
+    @maps = Map.all
+    @markers = Map.coordinates
+    @locations = @maps.city_state
+  end
 end
