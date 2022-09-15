@@ -18,8 +18,8 @@ for ( var i=0; i < markers.length; ++i ) {
 var myURL = jQuery( 'script[src$="leaf.js"]' ).attr( 'src' ).replace( 'leaf.js', '' );
  
 var myIcon = L.icon({
-    iconUrl: myURL + 'images/map_pin.png',
-    iconRetinaUrl: myURL + 'images/map_pin.png',
+    iconUrl: myURL + 'images/red-pin.png',
+    iconRetinaUrl: myURL + 'images/red-pin.png',
     iconSize: [29, 24],
     iconAnchor: [9, 21],
     popupAnchor: [0, -14]
