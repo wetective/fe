@@ -17,7 +17,7 @@ RSpec.describe 'The Landing Index Page' do
       visit root_path
       
       within '#active-cases-section' do
-        expect(page).to have_link('View Active Cases') # Add href to path when available
+        expect(page).to have_link('View Active Cases', investigations_path) 
       end
     end
 
