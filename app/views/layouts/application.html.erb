@@ -5,12 +5,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
 
   <body>
+    <header id='header-bar'>
+      <div id='header-logo'>
+        <%= image_tag('wetective-logo.png', width: 200) %>
+      </div>
+
+      <div id='header-item'>
+        <%= link_to "Home", root_path %>
+      </div>
+
+      <div id='header-item'>
+        <%= link_to "Register User" %>
+      </div>
+
+      <div id='header-item'>
+        <%= link_to "Log In" %>
+      </div>
+    </header>
+
     <%= yield %>
   </body>
 </html>
