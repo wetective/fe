@@ -34,6 +34,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'figaro'
 gem 'faraday'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
