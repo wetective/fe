@@ -12,8 +12,8 @@ export default class extends Controller {
                 subdomains: ['a','b','c']
             }).addTo( this.map );
             var map_pin = L.icon({
-                iconUrl: './assets/images/red-pin.png',
-                iconRetinaUrl: './assets/images/red-pin.png',
+                iconUrl: 'https://img.icons8.com/color/344/previous--location.png',
+                iconRetinaUrl: 'https://img.icons8.com/color/344/previous--location.png',
                 iconSize: [29, 24],
                 iconAnchor: [9, 21],
                 popupAnchor: [0, -14]

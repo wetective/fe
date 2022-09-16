@@ -11,46 +11,20 @@
  
   <div id="map" style="height: 500px; border: 1px solid #AAA;">
     <%=
-      map(:center => {
-        :latlng => [42.0, -93.0],
-        :zoom => 2
-      },
-      :markers => 
-        @locations.map do |location|
-          {
-            :latlng => location.coordinates,
-            :popup => location.city
-          }
+      map(
+        :center => 
+        {
+          :latlng => [42.0, -93.0],
+          :zoom => 2
+        },
+        :markers => 
+          @locations.map do |location|
+            {
+              :latlng => location.coordinates,
+              # :icon => icon,
+              :popup => location.city
+            }
         end
       )
     %>
   </div>
-
-  <script type='text/javascript'>
-    L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        subdomains: ['a','b','c']
-    }).addTo( map );
-
-    for ( var i=0; i < markers.length; ++i ) {
-      L.marker( [markers[i].lat, markers[i].lng], {icon: myIcon}  )
-          .bindPopup( '<a href="'markers[i].url'">'markers[i].city'</a>' )
-          .addTo( map );
-    }
-
-
-    var myIcon = L.icon({
-      iconUrl: myURL + 'images/red-pin.png',
-      iconRetinaUrl: myURL + 'images/red-pin.png',
-      iconSize: [29, 24],
-      iconAnchor: [9, 21],
-      popupAnchor: [0, -14]
-    });
-
-    for ( var i=0; i < markers.length; ++i ) {
-      L.marker( [markers[i].lat, markers[i].lng], {icon: myIcon} )
-      .bindPopup( '<a href="'markers[i].url'">'markers[i].city'</a>' )
-      .addTo( map );
-    }
-  </script>
-
