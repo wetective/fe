@@ -1,13 +1,56 @@
 <%= content_for :head do %>
-  <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-  
-  <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
-  <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+   <%# <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script> %>
 <% end %>
 
  
-  <div id="map" style="height: 440px; border: 1px solid #AAA;"></div>
+  <div id="map" style="height: 500px; border: 1px solid #AAA;">
+    <%=
+      map(:center => {
+        :latlng => [42.0, -93.0],
+        :zoom => 2
+      },
+      :markers => 
+        @locations.map do |location|
+          {
+            :latlng => location.coordinates,
+            :popup => location.city
+          }
+        end
+      )
+    %>
+  </div>
 
-  <script type='text/javascript' src="<%= @markers %>"></script>
-  <script type='text/javascript' src='./javascript/maps/leaf.js'></script>
+  <script type='text/javascript'>
+    L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        subdomains: ['a','b','c']
+    }).addTo( map );
+
+    for ( var i=0; i < markers.length; ++i ) {
+      L.marker( [markers[i].lat, markers[i].lng], {icon: myIcon}  )
+          .bindPopup( '<a href="'markers[i].url'">'markers[i].city'</a>' )
+          .addTo( map );
+    }
+
+
+    var myIcon = L.icon({
+      iconUrl: myURL + 'images/red-pin.png',
+      iconRetinaUrl: myURL + 'images/red-pin.png',
+      iconSize: [29, 24],
+      iconAnchor: [9, 21],
+      popupAnchor: [0, -14]
+    });
+
+    for ( var i=0; i < markers.length; ++i ) {
+      L.marker( [markers[i].lat, markers[i].lng], {icon: myIcon} )
+      .bindPopup( '<a href="'markers[i].url'">'markers[i].city'</a>' )
+      .addTo( map );
+    }
+  </script>
 
