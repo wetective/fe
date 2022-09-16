@@ -3,6 +3,4 @@ Rails.application.routes.draw do
   
   resources :investigations, only: [:index, :show]
   resources :locations, only: [:index, :show]
-
-  get 'locations/markers', to: 'locations#markers'
 end
