@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Fe</title>
+    <title>Wetective</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= yield(:head) %>
   </head>
 
   <body>
@@ -28,5 +29,7 @@
     </header>
 
     <%= yield %>
+    <br>
+    
   </body>
 </html>
