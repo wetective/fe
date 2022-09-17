@@ -3,11 +3,12 @@ class LocationsController < ApplicationController
     @locations = LocationFacade.new.markers
   end
 
-  def show
+  def reveal
     facade = InvestigationFacade.new
-    city = params[:data_id]
+    city = params[:format]
     investigations = facade.cities_investigations(city)
-    render 'locations/table', locals: { investigations: investigations, city: city }
+    require 'pry'; binding.pry 
+    render 'table', locals: { investigations: investigations, city: city }
     # format.turbo_stream { render turbo_stream: turbo_stream.replace("investigations", partial: "investigations/investigations", locals: { investigations: @location })}
   end
 end

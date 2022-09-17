@@ -10,7 +10,7 @@ class InvestigationService
   end
 
   private
-    def conn
+    def self.conn
       Faraday.new(url: 'https://api.fbi.gov/')
     end
 end
