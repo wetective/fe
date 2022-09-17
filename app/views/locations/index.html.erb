@@ -5,26 +5,45 @@
   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
    crossorigin=""></script>
+  <script type="module">
+    import { Application, Controller } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
+    window.Stimulus = Application.start()
+
+    Stimulus.register("table_results", class extends Controller {
+      static targets = [ "city" ]
+
+      show() {
+        const element = this.city
+        navigator.table_results.
+      }
+
+      get city() {
+        return this.cityTarget.value
+      }
+    })
+  </script>
    <%# <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script> %>
 <% end %>
 
- 
+ <div class="container">
   <div id="map" style="height: 500px; border: 1px solid #AAA;">
     <%=
       map(
         :center => 
         {
           :latlng => [42.0, -93.0],
-          :zoom => 2
+          :zoom => 3
         },
         :markers => 
           @locations.map do |location|
             {
               :latlng => location.coordinates,
-              # :icon => icon,
-              :popup => location.city
+              :popup => to_link(location.city)
             }
         end
       )
     %>
   </div>
+
+  <%= render 'table' %>
+</div>
