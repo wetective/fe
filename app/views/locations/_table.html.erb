@@ -1,4 +1,4 @@
-<% turbo_frame_tag dom_id(city) do %>
+<turbo-frame id="#{city}-table" action="replace" target="results">
   <span><h1><%= city %></h1> <a data-action="clear">clear</a></span>
 
   <br>
@@ -17,7 +17,7 @@
       <% end %>
     </tbody>
   </table>
-<% end %>
+</turbo-frame>
 
 <body>
   <div id="navigation">Links targeting the entire page</div>
