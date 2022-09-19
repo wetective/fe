@@ -17,7 +17,7 @@ RSpec.describe 'The Landing Index Page' do
       visit root_path
       
       within '#active-cases-section' do
-        expect(page).to have_link('View Active Cases', investigations_path) 
+        expect(page).to have_button('View Active Cases') 
       end
     end
 
@@ -26,11 +26,11 @@ RSpec.describe 'The Landing Index Page' do
 
       within '#investigations-most-wanted-section' do
         within '#investigations-most-wanted-left' do
-          expect(page).to have_button("Submit a Tip for a Missing Person") # Add href to path when avaialble
+          expect(page).to have_button("Submit a Tip for a Missing Person")
         end
 
         within '#investigations-most-wanted-right' do
-          expect(page).to have_button("Submit a Tip for a Fugitive") # Add href to path when avaialble
+          expect(page).to have_button("Submit a Tip for a Fugitive")
         end
       end
     end
@@ -40,6 +40,58 @@ RSpec.describe 'The Landing Index Page' do
 
       within '#landing-map-right-section' do
         expect(page).to have_button('Explore Cases') # Add href to path when available
+      end
+    end
+  end
+
+  describe 'if a user is logged in' do
+    xit 'has a navigation bar with the logo, home button, register button, and log in button' do
+      user1 = User.create!( name: "Billy Bob", 
+                          email: "biLLyBoB@fakeemail.com", 
+                          password: "passwordTest",
+                          password_confirmation: "passwordTest"
+                        )
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)    
+
+      visit root_path
+
+      within '#header-bar' do
+        expect(page).to have_css("img[src*='/assets/wetective-logo']")
+        expect(page).to have_link('Home', href: root_path)
+        expect(page).to have_link('Map', href: map_path) 
+        expect(page).to have_link('Browse', href: investigations_path) 
+        expect(page).to have_link('Log Out', href: logout_path) 
+      end
+    end
+
+    it 'has a link to view active cases' do
+      visit root_path
+      
+      within '#active-cases-section' do
+        expect(page).to have_button('View Active Cases') 
+      end
+    end
+
+    it 'has buttons to submit tips for fugitives or missing persons' do
+      visit root_path
+
+      within '#investigations-most-wanted-section' do
+        within '#investigations-most-wanted-left' do
+          expect(page).to have_button("Submit a Tip for a Missing Person")
+        end
+
+        within '#investigations-most-wanted-right' do
+          expect(page).to have_button("Submit a Tip for a Fugitive")
+        end
+      end
+    end
+
+    it 'has a button to Explore Cases' do
+      visit root_path
+
+      within '#landing-map-right-section' do
+        expect(page).to have_button('Explore Cases') 
       end
     end
   end

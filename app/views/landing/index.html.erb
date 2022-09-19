@@ -1,56 +1,45 @@
-<h2 id='landing-content'>Browse Real Investigations</h2>
-<h3 id='landing-content'>Help Solve Real Crimes</h3>
+<%= image_tag('wetective-logo.png', class: 'mx-auto d-block', height: '150') %>
+
+<div class='container text-center'>
+  <h2>Browse Real Investigations</h2>
+  <h3>Help Solve Real Crimes</h3>
+</div>
 
 <hr>
 
-<br>
-<br>
-<div id='active-cases-section'>
-  <div id='landing-content'>
-    Some random stuff here to be decided
-  </div>
+<div class='container' id='active-cases-section' align='center'>
+    Image of a Poster Here?
   <br>
-  <div id='landing-content'>
-    <%= link_to "View Active Cases", investigations_path %>
-  </div>
+  <br>
+  <%= button_to "View Active Cases", investigations_path, method: :get %>
 </div>
-<br>
-<br>
 
 <hr>
 
-<br>
-<br>
-<div id='investigations-most-wanted-section'>
-  <div id='investigations-most-wanted-left'>
-    <h3 id='landing-content'>Test</h3>
-    <p id='landing-content'>Test 2</p>
-    <div id='landing-content'><%= button_to "Submit a Tip for a Missing Person", root_path %></div>
-  </div>
-  <div id='investigations-most-wanted-right'>
-    <h3 id='landing-content'>Test</h3>
-    <p id='landing-content'>Test 2</p>
-    <div id='landing-content'><%= button_to "Submit a Tip for a Fugitive", root_path %></div>
+<div class="container" id='investigations-most-wanted-section'>
+  <div class="row">
+    <div class="col-6" id ='investigations-most-wanted-left' align='center'>
+      <h3>Open Investigations</h3>
+      <p>Help find missing persons</p>
+      <%= button_to "Submit a Tip for a Missing Person", root_path, method: :get  %></div>
+    <div class="col-6" id='investigations-most-wanted-right' align='center'>
+      <h3>Most Wanted</h3>
+      <p>Help find fugitives</p>
+        <%= button_to "Submit a Tip for a Fugitive", root_path, method: :get %>
+    </div>
   </div>
 </div>
-<br>
-<br>
 
 <hr>
 
-<br>
-<br>
-<div id='landing-map-section'>
-  <div id='landing-map-left-section'>
-    <p id='landing-content'>Map over here</p>
-  </div>
-
-  <div id='landing-map-right-section'>
-    <h3 id='landing-content'>Explore Cases Near You</h3>
-    <div id='landing-content'><%= button_to "Explore Cases" %></div>
+<div class="container">
+  <div class="row">
+    <div class="col-6 my-auto" id='landing-map-left-section' align='center'>
+      <p>Map Over Here</p>
+    </div>
+    <div class="col-6 my-auto" id='landing-map-right-section' align='center'>
+      <h3>Explore Cases Near You</h3>
+      <%= button_to "Explore Cases", root_path, method: :get %>
+    </div>
   </div>
 </div>
-<br>
-<br>
-
-<hr>
