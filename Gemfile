@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'bootstrap', '~> 5.2.1'
+
 gem 'figaro'
 gem 'faraday'
 
@@ -46,7 +48,7 @@ group :development do
   gem 'web-console', '>= 4.1.0'
 end
 
-group :test do 
+group :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'faker'

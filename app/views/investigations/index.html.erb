@@ -1,0 +1,9 @@
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <% @investigations.each_with_index do |investigation, i| %>
+      <div class="carousel-item <%= 'active ' if i == 0 %>">
+        <%= image_tag investigation.poster, class: "d-block w-100" %>
+      </div>
+    <% end %>
+  </div>
+</div>
