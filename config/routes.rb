@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'landing#index'
   
-  get '/locations/reveal', to: 'locations#reveal', as: 'reveal'
+  get '/locations/results', to: 'locations#results', as: 'results'
   
   resources :investigations, only: [:index, :show]
   resources :locations, only: [:index]
