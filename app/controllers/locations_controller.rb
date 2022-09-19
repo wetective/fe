@@ -3,21 +3,11 @@ class LocationsController < ApplicationController
 
   def index
     @locations = LocationFacade.new.markers
-    # if params[:filter]
-    #   facade = InvestigationFacade.new
-    #   @city = params[:filter]
-    #   @investigations = facade.cities_investigations(@city)
-      # render partial: 'locations/table', locals: { investigations: investigations, city: city }
-      # respond_to do |format|
-      #   format.turbo_stream do 
-      #     render turbo_stream: turbo_stream.replace(
-      #       "investigations", 
-      #       partial: "locations/table", 
-      #       locals: { investigations: investigations, city: city }
-      #     )
-      #   end
-      # end
-    # end
+    if params[:city]
+      facade = InvestigationFacade.new
+      @location = params[:city]
+      @investigations = facade.cities_investigations(@location)
+    end
   end
 
   def results

@@ -5,14 +5,11 @@
   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
    crossorigin=""></script>
-  <meta name="turbo-cache-control" content="no-preview">
 <% end %>
-
 
 <div class="container">
   <div id="map" style="height: 500px; border: 1px solid #AAA;">
-    <%=
-      map(
+      <%= map(
         :center => 
         {
           :latlng => [42.0, -93.0],
@@ -22,10 +19,9 @@
           @locations.map do |location|
             {
               :latlng => location.coordinates,
-              :popup => to_link(location.city)
+              :popup => link_to(location.city, params: {city: location.city})
             }
         end
-      )
-    %>
+        )
+      %>
   </div>
-</div>

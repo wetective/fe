@@ -1,0 +1,27 @@
+
+<div id="<%= @location %>_results">
+  <span>
+    <h2><%= @location %></h2>
+    <%= link_to "clear", reset %>
+  </span>
+
+  <br>
+
+  <h3>Results</h3>
+  <table id="<%= @location %>-table">
+    <thead>
+      <tr class="row">
+        <th class="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @investigations.each do |inv| %>
+        <tr class="row">
+          <td class="col">
+            <%= link_to inv.title.titleize + " - " + inv.description.truncate(50), investigation_path(inv), target: "_top" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

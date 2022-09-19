@@ -1,8 +1,7 @@
+<div class="container">
+  <%= render 'map', collection: @locations, cached: true %>
 
-  <div id="map_div">
-    <%= render 'map' %>
-  </div>
-
-
-<%= turbo_frame_tag "#{@location}_results" do %>
-<% end %>
+  <% if @location %>
+    <%= render 'investigations', location: @location %>
+  <% end %>
+</div>
