@@ -23,7 +23,7 @@ class Investigation
     @reward_text = nil_to_s(data[:reward_text])
     @aliases = nil_to_s(data[:aliases].join(','))
     @warning_message = nil_to_s(data[:warning_message])
-    @field_offices = nil_to_s(data[:field_offices])
+    @field_offices = nil_to_s(data[:field_offices].join(','))
     @sex = nil_to_s(data[:sex])
     @scars_and_marks = nil_to_s(data[:scars_and_marks])
     @caution = nil_to_s(data[:caution])
