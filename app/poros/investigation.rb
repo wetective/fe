@@ -21,7 +21,7 @@ class Investigation
   def initialize(data)
     @files = nil_to_s(data[:files][0][:url])
     @reward_text = nil_to_s(data[:reward_text])
-    @aliases = nil_to_a(data[:aliases])
+    @aliases = nil_to_s(data[:aliases].join(','))
     @warning_message = nil_to_s(data[:warning_message])
     @field_offices = nil_to_s(data[:field_offices])
     @sex = nil_to_s(data[:sex])
@@ -41,9 +41,5 @@ class Investigation
 
   def nil_to_s(key)
     key == nil ? key.to_s : key
-  end
-
-  def nil_to_a(key)
-    key == nil ? key.to_a : key
   end
 end
