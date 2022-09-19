@@ -5,6 +5,6 @@ class InvestigationsController < ApplicationController
   end
   
   def show
-    @investigations = InvestigationFacade.create_investigation(params[:id])
+    @investigation = InvestigationFacade.create_investigation(params[:id])
   end
 end
