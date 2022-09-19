@@ -1,5 +1,5 @@
 class InvestigationFacade
-  
+
   def self.create_investigations
     investigations = InvestigationService.get_investigations
     investigations.map do |investigation|

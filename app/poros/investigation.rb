@@ -16,7 +16,8 @@ class Investigation
               :eyes,
               :status,
               :subjects,
-              :dates_of_birth_used
+              :dates_of_birth_used,
+              :poster
 
   def initialize(data)
     @files = nil_to_s(data[:files][0][:url])
@@ -37,6 +38,7 @@ class Investigation
     @status = nil_to_s(data[:status])
     @subjects = nil_to_s(data[:subjects])
     @dates_of_birth_used = nil_to_s(data[:dates_of_birth_used])
+    @poster = data[:url] + "/@@screenshot.gif"
   end
 
   def nil_to_s(key)

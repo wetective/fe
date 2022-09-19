@@ -5,6 +5,6 @@ class InvestigationsController < ApplicationController
   end
 
   def show
-    
+
   end
 end
