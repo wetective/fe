@@ -21,9 +21,9 @@ class Investigation
   def initialize(data)
     @files = nil_to_s(data[:files][0][:url])
     @reward_text = nil_to_s(data[:reward_text])
-    @aliases = nil_to_s(data[:aliases].join(', '))
+    @aliases = arr_to_s(data[:aliases])
     @warning_message = nil_to_s(data[:warning_message])
-    @field_offices = nil_to_s(data[:field_offices].join(', '))
+    @field_offices = arr_to_s(data[:field_offices])
     @sex = nil_to_s(data[:sex])
     @scars_and_marks = nil_to_s(data[:scars_and_marks])
     @caution = nil_to_s(data[:caution])
@@ -35,11 +35,15 @@ class Investigation
     @uid = nil_to_s(data[:uid])
     @eyes = nil_to_s(data[:eyes])
     @status = nil_to_s(data[:status])
-    @subjects = nil_to_s(data[:subjects].join(', '))
-    @dates_of_birth_used = nil_to_s(data[:dates_of_birth_used].join(', '))
+    @subjects = arr_to_s(data[:subjects])
+    @dates_of_birth_used = arr_to_s(data[:dates_of_birth_used])
   end
 
   def nil_to_s(key)
     key == nil ? key.to_s : key
+  end
+
+  def arr_to_s(key)
+    key == nil ? key.to_s : key.join(', ')
   end
 end

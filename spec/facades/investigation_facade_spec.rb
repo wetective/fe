@@ -7,7 +7,7 @@ RSpec.describe InvestigationFacade do
 
       expect(investigation.files).to be_a(String)
       expect(investigation.reward_text).to be_a(String)
-      expect(investigation.aliases).to be_an(Array)
+      expect(investigation.aliases).to be_an(String)
       expect(investigation.warning_message).to be_a(String)
       expect(investigation.sex).to be_a(String)
       expect(investigation.scars_and_marks).to be_a(String)
@@ -20,8 +20,8 @@ RSpec.describe InvestigationFacade do
       expect(investigation.uid).to be_a(String)
       expect(investigation.eyes).to be_a(String)
       expect(investigation.status).to be_a(String)
-      expect(investigation.subjects).to be_an(Array)
-      expect(investigation.dates_of_birth_used).to be_an(Array)
+      expect(investigation.subjects).to be_an(String)
+      expect(investigation.dates_of_birth_used).to be_an(String)
     end
   end
   
@@ -31,7 +31,7 @@ RSpec.describe InvestigationFacade do
 
       expect(investigation.files).to be_a(String)
       expect(investigation.reward_text).to be_a(String)
-      expect(investigation.aliases).to be_an(Array)
+      expect(investigation.aliases).to be_an(String)
       expect(investigation.warning_message).to be_a(String)
       expect(investigation.sex).to be_a(String)
       expect(investigation.scars_and_marks).to be_a(String)
@@ -44,8 +44,8 @@ RSpec.describe InvestigationFacade do
       expect(investigation.uid).to be_a(String)
       expect(investigation.eyes).to be_a(String)
       expect(investigation.status).to be_a(String)
-      expect(investigation.subjects).to be_an(Array)
-      expect(investigation.dates_of_birth_used).to be_an(Array)
+      expect(investigation.subjects).to be_an(String)
+      expect(investigation.dates_of_birth_used).to be_an(String)
     end
   end
 end

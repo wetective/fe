@@ -24,6 +24,6 @@ RSpec.describe Investigation do
     expect(investigation.eyes).to eq("blue")
     expect(investigation.status).to eq("captured")
     expect(investigation.subjects).to eq("White-Collar Crime")
-    expect(investigation.dates_of_birth_used).to eq("July 8, 1955", "July 8, 1954")
+    expect(investigation.dates_of_birth_used).to eq("July 8, 1955, July 8, 1954")
   end
 end
