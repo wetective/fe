@@ -8,7 +8,7 @@ RSpec.describe Investigation do
 
     expect(investigation).to be_a(Investigation)
     expect(investigation.files).to eq("https://www.fbi.gov/wanted/wcc/christopher-c-gardner/download.pdf")
-    expect(investigation.reward_text).to eq("The FBI is offering a reward of up to $10,000 for information leading to the arrest of Christopher Gardner.")
+    expect(investigation.reward).to eq("The FBI is offering a reward of up to $10,000 for information leading to the arrest of Christopher Gardner.")
     expect(investigation.aliases).to eq("Chris Gardner, Christopher Charles Gardner")
     expect(investigation.warning_message).to eq("SHOULD BE CONSIDERED AN INTERNATIONAL FLIGHT RISK.")
     expect(investigation.field_offices).to eq("milwaukee")

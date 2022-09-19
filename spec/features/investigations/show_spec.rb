@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Investigations Show Page' do
   it 'displays information for a specific investigation by id', :vcr do
-    visit "/investigations/#{'3f5d03cb681c454f8cc324c3303a579d'}"
+    visit "/investigations/#{'714d720712d940389b85fd1535031e0c'}"
 
-    expect(page).to have_content("https://www.fbi.gov/wanted/wcc/christopher-c-gardner/download.pdf")
+    expect(page).to have_content("Reward: The FBI is offering a reward of up to $5,000 for information leading to the arrest and conviction of the person or persons responsible for the death of Mona Renee Vallo.")
     expect(page).to have_content("The FBI is offering a reward of up to $10,000 for information leading to the arrest of Christopher Gardner.")
     expect(page).to have_content("Chris Gardner", "Christopher Charles Gardner")
     expect(page).to have_content("SHOULD BE CONSIDERED AN INTERNATIONAL FLIGHT RISK.")

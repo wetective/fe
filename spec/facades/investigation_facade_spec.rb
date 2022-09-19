@@ -7,7 +7,7 @@ RSpec.describe InvestigationFacade do
         investigation = InvestigationFacade.create_investigations[2]
         
         expect(investigation.files).to be_a(String)
-        expect(investigation.reward_text).to be_a(String)
+        expect(investigation.reward).to be_a(String)
         expect(investigation.aliases).to be_an(String)
         expect(investigation.warning_message).to be_a(String)
         expect(investigation.sex).to be_a(String)
@@ -37,7 +37,7 @@ RSpec.describe InvestigationFacade do
         investigation = InvestigationFacade.create_investigation("714d720712d940389b85fd1535031e0c")
 
         expect(investigation.files).to be_a(String)
-        expect(investigation.reward_text).to be_a(String)
+        expect(investigation.reward).to be_a(String)
         expect(investigation.aliases).to be_an(String)
         expect(investigation.warning_message).to be_a(String)
         expect(investigation.sex).to be_a(String)

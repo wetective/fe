@@ -1,6 +1,6 @@
 class Investigation
   attr_reader :files,
-              :reward_text,
+              :reward,
               :aliases,
               :warning_message,
               :field_offices,
@@ -20,7 +20,7 @@ class Investigation
 
   def initialize(data)
     @files = nil_to_s(data[:files][0][:url])
-    @reward_text = nil_to_s(data[:reward_text])
+    @reward = nil_to_s(data[:reward_text])
     @aliases = arr_to_s(data[:aliases])
     @warning_message = nil_to_s(data[:warning_message])
     @field_offices = arr_to_s(data[:field_offices])
