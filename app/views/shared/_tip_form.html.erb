@@ -1,0 +1,47 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Submit a Tip</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= form_with model: @tip, local: true do |f| %>
+            <div class="form-group">
+              <%= f.label :title %>
+              <%= f.text_field :title, class: "form-control", value: "<%= @investigation.title %>" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :description %>
+              <%= f.text_area :description, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :location %>
+              <%= f.text_field :location, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :date %>
+              <%= f.date_field :date, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :time %>
+              <%= f.time_field :time, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :anonymous %>
+              <%= f.check_box :anonymous %>
+            </div>
+            <div class="form-group">
+              <%= f.submit "Submit", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+
+  </div>
+</div>

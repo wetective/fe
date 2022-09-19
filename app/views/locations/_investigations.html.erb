@@ -1,27 +1,22 @@
-
 <div id="<%= @location %>_results">
-  <span>
+  <div id="city-row">
     <h2><%= @location %></h2>
-    <%= link_to "clear", reset %>
-  </span>
+  </div>
+  <div id="city-row">
+    <%= button_to "clear", reset, class: "btn btn-outline-secondary btn-sm" %>
+  </div>
 
   <br>
 
   <h3>Results</h3>
-  <table id="<%= @location %>-table">
-    <thead>
-      <tr class="row">
-        <th class="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @investigations.each do |inv| %>
-        <tr class="row">
-          <td class="col">
-            <%= link_to inv.title.titleize + " - " + inv.description.truncate(50), investigation_path(inv), target: "_top" %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <% @investigations.each do |inv| %>
+    <ul class="list group">
+      <li class="list-group-item">
+      <%= link_to inv.title.titleize + " - " + inv.description.truncate(80), 
+              investigation_path(inv), 
+              target: "_top" 
+              %>
+      </li>
+    </ul>
+  <% end %>
 </div>

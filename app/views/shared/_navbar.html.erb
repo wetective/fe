@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg sticky-top bg-light">
+  <div class="container-fluid">
+    <a href="/"><%= image_tag('wetective-logo.png', width: 200) %></a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <%= yield :nav_links %>
+      </ul>
+
+      <span class="navbar-text">
+        <%# <%= render "shared/nav_login_logout" %> 
+      </span>
+    </div>
+  </div>
+</nav>

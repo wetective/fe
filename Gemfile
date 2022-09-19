@@ -30,6 +30,7 @@ gem "sassc-rails"
 # Use Bootstrap for styling
 gem "bootstrap-sass"
 gem "bootstrap"
+gem "pagy"
 
 # Use figaro to handle environment variables
 gem "figaro"

@@ -9,17 +9,27 @@
 
 <div class="container">
   <div id="map" style="height: 500px; border: 1px solid #AAA;">
-      <%= map(
+      <%= 
+      icon_options = {
+        iconUrl: 'images/red-pin.png',
+        shadowUrl: 'images/red-pin.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      }
+      map(
         :center => 
         {
-          :latlng => [42.0, -93.0],
-          :zoom => 3
+          :latlng => [36.0, -97.0],
+          :zoom => 4
         },
         :markers => 
           @locations.map do |location|
             {
               :latlng => location.coordinates,
-              :popup => link_to(location.city, params: {city: location.city})
+              :popup => link_to(location.city, params: {city: location.city}),
+              :icon => icon_options
             }
         end
         )

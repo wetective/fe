@@ -10,19 +10,7 @@
   </head>
 
   <body>
-    <header id='header-bar'>
-      <div id='header-logo'>
-        <a href="/"><%= image_tag('wetective-logo.png', width: 200) %></a>
-      </div>
-
-      <div id='header-item'>
-        <%= link_to "Sign Up" %>
-      </div>
-
-      <div id='header-item'>
-        <%= link_to "Login" %>
-      </div>
-    </header>
+    <%= render "shared/header" %>
 
     <br>
     <%= yield %>
