@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   
   get '/investigations', to: 'investigations#index'
   get '/investigations/:id', to: 'investigations#show'
-
+  
   resources :locations, only: [:index, :show]
 end
