@@ -1,18 +1,22 @@
-<h1>Open Investigation: <%= @investigation.title %></h1>
+<h1>WANTED: <%= @investigation.title %></h1>
 
-<%= @investigation.reward %><br>
-<%= @investigation.caution %><br>
-<%= @investigation.description %><br>
-<%= @investigation.aliases %><br>
-<%= @investigation.warning_message %><br><br>
-<%= @investigation.dates_of_birth_used %><br>
-<%= @investigation.eyes %><br>
-<%= @investigation.hair %><br>
-<%= @investigation.race %><br>
-<%= @investigation.field_offices %><br>
-<%= @investigation.files %><br>
-<%= @investigation.scars_and_marks %><br>
-<%= @investigation.sex %><br>
-<%= @investigation.status %><br>
-<%= @investigation.subjects %><br>
-<%= @investigation.weight %><br>
+<h2><%= @investigation.subjects %><br></h2>
+<h3>Reward: <%= @investigation.reward %><br></h3>
+
+<p>Alias: <%= @investigation.aliases %><br></p>
+<p>Field Office: <%= @investigation.field_offices.capitalize %><br></p>
+
+<p>Caution: <%= @investigation.caution %><br></p>
+<p>Description: <%= @investigation.description %><br></p>
+<p>Warning: <%= @investigation.warning_message %><br></p>
+<p>Status: <%= @investigation.status %><br></p>
+
+<p>Date of Birth Used: <%= @investigation.dates_of_birth_used %><br></p>
+<p>Sex: <%= @investigation.sex %><br></p>
+<p>Race: <%= @investigation.race.capitalize %><br></p>
+<p>Hair Color: <%= @investigation.hair %><br></p>
+<p>Eye Color: <%= @investigation.eyes %><br></p>
+<p>Weight: <%= @investigation.weight %><br></p>
+<p>Scars and Marks: <%= @investigation.scars_and_marks %><br></p>
+
+<p><%= @investigation.files %><br></p>
