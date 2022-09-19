@@ -1,24 +1,23 @@
 class SessionsController < ApplicationController
     def omniauth
-        user = User.from_omniauth(request.env['omniauth.auth'])
-        if user.valid?
-            session[:user_id] = user.id
-            redirect_to user_path(user)
-        else
-            redirect_to '/login'
-        end
+        auth_hash = request.env['omniauth.auth']
+        session[:access_token] = auth_hash[:credentials][:token]
+        user = UserFacade.find_create_user(auth_hash[:info])
+
+        redirect_to "/dashboard"
     end
 
     def new
     end
 
     def create
-        user = User.find_by(email: params[:email])
-        if user && user.authenticate(params[:password])
-            flash[:success] = "Welcome, #{user.email}!"
-            redirect_to root
-        else
-            flash[:error] = "Sorry, your credentials are bad"
-            render :new
+        session[:user_id] = params[:user_id]
+        redirect_to "/dashboard"
+    end
+
+    def destroy
+        session.destroy
+        flash[:success] = "Successfully Logged Out"
+        redirect_to root_path
     end
 end

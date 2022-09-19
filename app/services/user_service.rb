@@ -6,7 +6,7 @@ class UserService
     def self.get_json(response)
         JSON.parse(response.body, symbolize_names: true)
     end
-    
+
     def self.users
         response = conn.get("/api/v1/users")
         get_json(response)
@@ -19,8 +19,7 @@ class UserService
 
     def self.create_user(data)
         response = conn.post("/api/v1/users/register", {
-            email: data[:email], 
-            username: data[:name]
+            email: data[:email]
         }.to_json, "Content-Type" => "application/json")
         get_json(response)
     end

@@ -1,6 +1,7 @@
 class UserFacade 
   def self.find_create_user(info)
     attributes = UserService.create_user(info)
+    binding.pry
     User.new(attributes[:data])
   end
 
