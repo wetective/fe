@@ -35,8 +35,8 @@ class Investigation
     @uid = nil_to_s(data[:uid])
     @eyes = nil_to_s(data[:eyes])
     @status = nil_to_s(data[:status])
-    @subjects = nil_to_s(data[:subjects])
-    @dates_of_birth_used = nil_to_s(data[:dates_of_birth_used])
+    @subjects = nil_to_s(data[:subjects].join(','))
+    @dates_of_birth_used = nil_to_s(data[:dates_of_birth_used].join(','))
   end
 
   def nil_to_s(key)
