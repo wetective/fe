@@ -3,9 +3,10 @@ class UserService
         Faraday.new("http://localhost:4999")
     end
 
-    def self.get_json(response)
-        JSON.parse(response.body, symbolize_names: true)
-    end
+    # def self.get_json(response)
+    #     binding.pry
+    #     JSON.parse(response.body, symbolize_names: true)
+    # end
 
     def self.users
         response = conn.get("/api/v1/users")
@@ -21,6 +22,8 @@ class UserService
         response = conn.post("/api/v1/users/register", {
             email: data[:email]
         }.to_json, "Content-Type" => "application/json")
-        get_json(response)
+        # binding.pry
+        # JSON.parse(response.body, symbolize_names: true)
+
     end
 end
