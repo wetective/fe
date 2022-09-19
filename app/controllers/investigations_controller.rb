@@ -6,6 +6,6 @@ class InvestigationsController < ApplicationController
   
   def show
     binding.pry
-    @investigations = InvestigationFacade.create_investigations(params[:uid])
+    @investigations = InvestigationFacade.create_investigation(params[:id])
   end
 end
