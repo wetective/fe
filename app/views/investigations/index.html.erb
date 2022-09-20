@@ -14,18 +14,18 @@
         <% @investigations.each_with_index do |investigation, i| %>
           <% if investigation.status != "recovered" %>
             <div class="carousel-item <%= 'active' if i == 0 %>">
-                <%= image_tag investigation.mugshot, size: '400', class: 'd-block' %>
+                <%= image_tag investigation.mugshot, size: '500', class: 'mx-auto d-block' %>
             </div>
           <% end %>
         <% end %>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span>Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span>Next</span>
       </button>
     </div>
   </body>
