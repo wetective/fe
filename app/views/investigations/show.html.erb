@@ -1,7 +1,11 @@
 <center>
 <br><br>
+
 <% if @investigation.files != nil %>
-  <iframe src="http://docs.google.com/gview?url=<%= @investigation.files %>&embedded=true" style="width:818px; height:800px;" frameborder="0"></iframe>
+  <div class="pdf">
+    <iframe src="http://docs.google.com/gview?url=<%= @investigation.files %>&embedded=true" style="width:818px; height:800px;" frameborder="0"></iframe>
+  </div>
+
 <% else %>
   <h1>WANTED: <%= @investigation.title %></h1>
 
