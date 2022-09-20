@@ -5,6 +5,15 @@ Rails.application.routes.draw do
   
   get '/investigations', to: 'investigations#index'
   get '/investigations/:id', to: 'investigations#show'
-  
+
+  get '/register', to: 'users#new'
+  post '/register', to: 'users#create'
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
+  get '/map', to: 'map#index'
+
   resources :locations, only: [:index, :show]
 end
