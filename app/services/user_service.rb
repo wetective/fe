@@ -24,13 +24,13 @@ class UserService
     end
 
     def self.create_user(data)
-        response = conn.post("/api/v1/users/register") do |req| 
-          req.headers[:content_type] = 'application/json'
-          req.params[:email] = data[:email]
-          req.params[:first_name] = data[:first_name]
-          req.params[:password] = data[:password]
-          req.params[:password_confirmation] = data[:password_confirmation]
-        end
+      response = conn.post("/api/v1/users/register") do |req| 
+        req.headers[:content_type] = 'application/json'
+        req.params[:email] = data[:email]
+        req.params[:first_name] = data[:first_name]
+        req.params[:password] = data[:password]
+        req.params[:password_confirmation] = data[:password_confirmation]
+      end
         #     email: data[:email]
         # }.to_json, "Content-Type" => "application/json")
         # binding.pry

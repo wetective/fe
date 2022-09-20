@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
   def create
     @user = UserFacade.create_user(user_params)
-    binding.pry
     if @user
       redirect_to root_path
       flash[:success] = "Welcome, #{@user.first_name}!"
