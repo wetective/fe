@@ -20,28 +20,52 @@
       <!-- Will need to add logical for if current_user or not -->
       <!-- If current_user display options, name, profile pic -->
       <!-- If not current_user display what is currently below -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href=<%= root_path %>>Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href=<%= map_path %>>Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href=<%= investigations_path %>>Browse</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href=<%= register_path %>>Register User</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href=<%= login_path %>>Log In</a>
-          </li>
-        </ul>
-      </div>
+      <% if current_user %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href=<%= root_path %>>Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= map_path %>>Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= investigations_path %>>Browse</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= logout_path %>>Log Out</a>
+            </li>
+          </ul>
+        </div>
+      <% else %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href=<%= root_path %>>Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= map_path %>>Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= investigations_path %>>Browse</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= register_path %>>Register User</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= login_path %>>Log In</a>
+            </li>
+          </ul>
+        </div>
+      <% end %>
     </nav>
     <%= yield %>
     <br>
     
   </body>
 </html>
+
+
+
+
+

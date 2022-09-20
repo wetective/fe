@@ -45,12 +45,15 @@ RSpec.describe 'The Landing Index Page' do
   end
 
   describe 'if a user is logged in' do
-    xit 'has a navigation bar with the logo, home button, register button, and log in button' do
-      user1 = User.create!( name: "Billy Bob", 
-                          email: "biLLyBoB@fakeemail.com", 
-                          password: "passwordTest",
-                          password_confirmation: "passwordTest"
-                        )
+    it 'has a navigation bar with the logo, home button, register button, and log in button' do
+      attrs = {
+        attributes: { 
+          email: "blakesaylor@email.com" 
+        },
+        id: 123
+      }
+
+      user1 = User.new(attrs)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)    
 
