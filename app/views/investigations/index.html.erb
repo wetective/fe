@@ -12,11 +12,11 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <% @investigations.each_with_index do |investigation, i| %>
-        <% if investigation.status != "recovered" %>
-          <div class="carousel-item <%= 'active' if i == 0 %>">
-              <%= image_tag investigation.mugshot, size: '400' %>
-            <% end %>
-          </div>
+          <% if investigation.status != "recovered" %>
+            <div class="carousel-item <%= 'active' if i == 0 %>">
+                <%= image_tag investigation.mugshot, size: '400', class: 'd-block' %>
+            </div>
+          <% end %>
         <% end %>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
