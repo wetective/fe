@@ -1,12 +1,17 @@
 class UserFacade 
-  def self.find_create_user(info)
+  def self.find_user(info)
+    # User.new(attributes[:data])
+    attributes = UserService.find_user(info)
+  end
+
+  def self.create_user(info)
     attributes = UserService.create_user(info)
-    User.new(attributes[:data])
+    # User.new(attributes[:data])
   end
 
   def self.all_users
     users = UserService.users
-     users[:data].map do |info|
+    users[:data].map do |info|
       User.new(info)
     end 
   end
