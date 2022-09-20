@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe "User service" do
-  it "establishes connection with backend User API", :vcr do
+  xit "establishes connection with backend User API", :vcr do
     users = UserService.users
 
     expect(users).to be_a(Hash)
     expect(users).to include(:data)
   end
 
-  it 'establishes connection to create new user', :vcr do 
+  xit 'establishes connection to create new user', :vcr do 
     user_data = {email: 'joe@example.com', name: 'joe'}
     new_user = UserService.create_user(user_data)
 
@@ -20,7 +20,7 @@ RSpec.describe "User service" do
     expect(new_user[:data][:attributes][:email]).to eq('joe@example.com')
   end
 
-  it 'establishes connection to return one user', :vcr do 
+  xit 'establishes connection to return one user', :vcr do 
     found_user = UserService.user(3)
 
     expect(found_user).to be_a(Hash)

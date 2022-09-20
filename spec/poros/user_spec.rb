@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "User" do 
-  it 'exists and has attributes', :vcr do 
+  xit 'exists and has attributes', :vcr do 
     info = {name: "Joe", email: "joe@example.com"}
     user = UserFacade.find_create_user(info)
 
