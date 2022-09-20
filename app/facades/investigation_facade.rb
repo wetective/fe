@@ -12,9 +12,9 @@ class InvestigationFacade
 
   def self.create_investigation(uid)
     investigations = InvestigationService.get_investigations
-
+ 
     investigations.select do |investigation|
-      if investigation[:uid] == uid
+      if investigation[:status] != 'captured' && investigation[:uid] == uid
        return Investigation.new(investigation)
       end
     end
