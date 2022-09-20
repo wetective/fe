@@ -14,7 +14,7 @@
         <% @investigations.each_with_index do |investigation, i| %>
         <% if investigation.status != "recovered" %>
           <div class="carousel-item <%= 'active' if i == 0 %>">
-              <%= image_tag investigation.mugshot, class:"d-block w-20" %>
+              <%= image_tag investigation.mugshot, size: '400' %>
             <% end %>
           </div>
         <% end %>

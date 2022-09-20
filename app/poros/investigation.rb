@@ -17,7 +17,6 @@ class Investigation
               :status,
               :subjects,
               :dates_of_birth_used,
-              :poster,
               :mugshot
 
   def initialize(data)
@@ -39,7 +38,6 @@ class Investigation
     @status = nil_to_s(data[:status])
     @subjects = nil_to_s(data[:subjects])
     @dates_of_birth_used = nil_to_s(data[:dates_of_birth_used])
-    @poster = data[:url] + "/@@screenshot.gif"
     @mugshot = data[:images][0][:original]
   end
 
