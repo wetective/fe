@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   get '/login', to: 'sessions#login'
   get '/register', to: 'sessions#register'
-  # post '/register', to: 'sessions#create'
+  post '/register', to: 'sessions#create'
 
   # get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

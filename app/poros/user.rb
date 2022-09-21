@@ -1,6 +1,7 @@
 class User 
   attr_reader :name,
               :email,
+              :password,
               :id
 
   def initialize(attributes)
