@@ -10,12 +10,21 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require leaflet
  */
 
 @import 'bootstrap';
 
 .nav-link {
   color: white;
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+  font-size: medium;
+}
+
+#city-row {
+  display: inline-block;
 }
 
 .carousel-control-next-icon:after

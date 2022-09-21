@@ -1,21 +1,18 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
   root 'landing#index'
   
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
   
   get '/dashboard', to: 'dashboard#index'
-  get '/investigations', to: 'investigations#index'
-  get '/investigations/:id', to: 'investigations#show'
   
   get '/login', to: 'sessions#login'
-  get '/register', to: 'sessions#register'
+  get '/register', to: 'sessions#new'
   post '/register', to: 'sessions#create'
 
-  # get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  get '/logout', to: 'sessions#destroy'
-
-  resources :locations, only: [:index, :show]
+  resources :users do
+    get '/dashboard', to: 'dashboard#index', as: 'dashboard'
+  end
+  
+  resources :investigations, only: [:index, :show]
+  resources :locations, only: [:index]
 end
