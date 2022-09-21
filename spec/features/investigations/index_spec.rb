@@ -13,6 +13,4 @@ RSpec.describe 'Investigation index page' do
     first(:button, "Investigation Show Page").click
     expect(current_path).to eq("/investigations/11954299cdfd402ca45449793d6e24c5")
   end
-
-
 end
