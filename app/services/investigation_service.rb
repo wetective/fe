@@ -4,6 +4,11 @@ class InvestigationService
     JSON.parse(response.body, symbolize_names: true)[:items]
   end
 
+  def self.get_investigations_by_uid(uid)
+    response = conn.get("wanted/v1/list?uid=#{uid}")
+    JSON.parse(response.body, symbolize_names: true)[:items]
+  end
+
   def self.get_investigations
     response = conn.get('wanted/v1/list')
     JSON.parse(response.body, symbolize_names: true)[:items]
