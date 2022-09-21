@@ -3,7 +3,11 @@ class SessionsController < ApplicationController
     auth_hash = request.env['omniauth.auth']
     session[:user_token] = auth_hash[:credentials][:token]
     user = UserFacade.find_create_user(auth_hash[:info])
-    redirect_to "/dashboard"
+    if user
+      redirect_to dashboard_path
+    else
+      render :new, notice: "Sorry, your we could not log you in."
+    end
   end
 
   def new
@@ -12,9 +16,7 @@ class SessionsController < ApplicationController
   def create
     user = UserFacade.find_create_user(params)
     session[:user_id] = user.id
-    # binding.pry
-
-    redirect_to "/dashboard"
+    redirect_to dashboard_path
   end
 
   def destroy

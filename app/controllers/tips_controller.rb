@@ -24,12 +24,6 @@ class TipsController < ApplicationController
       end
     
       def find_tip
-        @tip = Tip.from_google_auth(request.env['omniauth.auth'])
-        if @tip
-          set_session(@tip)
-          redirect_to root_path
-        else
-          redirect_to auth_login_path, notice: "Sorry, your we could not log you in."
-        end
+        @tip = Tip.find_tips(request.env['omniauth.auth'])
       end
   end
