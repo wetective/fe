@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     user = UserFacade.create_user(user_params)
     user = UserFacade.find_user(user_params[:email])
     if user
-      redirect_to dashboard_path
+      redirect_to user_dashboard_path
       render :notice, "Welcome, #{@user.first_name}!"
     else
       redirect_to auth_login_path
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       @user = User.from_google_auth(request.env['omniauth.auth'])
       if @user
         set_session(@user)
-        redirect_to dashboard_path
+        redirect_to user_dashboard_path
       else
         redirect_to auth_login_path, notice: "Sorry, your we could not log you in."
       end

@@ -41,6 +41,8 @@ gem 'faraday'
 
 # Use omniauth to handle OAuth authentication
 gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # gem 'webpacker', '~> 5.0'
