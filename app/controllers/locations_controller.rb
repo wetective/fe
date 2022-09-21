@@ -1,10 +1,9 @@
 class LocationsController < ApplicationController
   def index
-    @locations = LocationFacade.all
-    if params[:city]
-      facade = InvestigationFacade.new
+    @locations = LocationFacade.new.markers
+    if !@locations.empty?
       @location = params[:city]
-      @investigations = facade.cities_investigations(@location)
+      @investigations = InvestigationFacade.new.cities_investigations(@location)
       # @pagy, @investigations = pagy(@investigations, items: 15)
     end
   end
