@@ -20,7 +20,7 @@ class TipsController < ApplicationController
   
     private
       def tip_params
-        params.permit(:first_name, :email, :password, :password_confirmation, :authenticity_token, :commit)
+        params.permit(:uid, :location, :date, :time, :description, :user_id)
       end
     
       def find_tip
