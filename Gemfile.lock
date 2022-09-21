@@ -140,7 +140,7 @@ GEM
       capybara (>= 1.1)
       rspec (>= 2.14)
     pg (1.4.3)
-    popper_js (1.16.0)
+    popper_js (1.16.1)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -292,4 +292,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.3.18
+   2.2.27
