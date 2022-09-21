@@ -10,10 +10,12 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
+  get '/locations/results', to: 'locations#results', as: 'results'
+
   resources :users do
     get '/dashboard', to: 'dashboard#index', as: 'dashboard'
   end
-
-  resources :investigations, only:[ :index, :show]
-  resources :locations, only: [:index, :show]
+  
+  resources :investigations, only: [:index, :show]
+  resources :locations, only: [:index]
 end

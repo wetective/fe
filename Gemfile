@@ -6,9 +6,10 @@ ruby '2.7.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7'
 
-# Use PostgreSQL as the database for Active Record
-gem 'pg'
+# Use postgres as the database for Active Record
+gem "pg"
 
+<<<<<<< HEAD
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 
@@ -20,10 +21,24 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Model has_secure_password
 gem 'bcrypt'
+=======
+# Use the Puma web server [https://github.com/puma/puma]
+gem "puma", "~> 5.0"
+
+# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "jbuilder"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+gem "bcrypt", "~> 3.1.7"
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+>>>>>>> origin/turbo
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+gem "bootsnap", require: false
 
+<<<<<<< HEAD
 # Use bootstrap for styling
 gem 'bootstrap'
 
@@ -38,6 +53,24 @@ gem 'figaro'
 
 # Use faraday to handle api calls
 gem 'faraday'
+=======
+# Use Sass to process CSS
+gem "sassc-rails"
+
+# Use Bootstrap for styling
+gem "bootstrap-sass"
+gem "bootstrap"
+gem "pagy"
+
+# Use figaro to handle environment variables
+gem "figaro"
+
+# Use Faraday to handle HTTP requests
+gem "faraday"
+
+# Use leaflet to handle maps
+gem "leaflet-rails"
+>>>>>>> origin/turbo
 
 # Use omniauth to handle OAuth authentication
 gem 'omniauth'
@@ -79,6 +112,3 @@ group :test do
   gem 'vcr'
   gem 'webmock'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
