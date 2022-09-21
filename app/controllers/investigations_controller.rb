@@ -4,8 +4,8 @@ class InvestigationsController < ApplicationController
     @investigations = InvestigationFacade.create_investigations
     @investigations.delete(nil)
   end
-
+  
   def show
-
+    @investigation = InvestigationFacade.create_investigation(params[:id])
   end
 end

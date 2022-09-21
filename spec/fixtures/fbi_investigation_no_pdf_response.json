@@ -1,0 +1,71 @@
+{
+    "reward_text": "The FBI is offering a reward of up to $5,000 for information leading to the arrest and conviction of the person or persons responsible for the death of Mona Renee Vallo.",
+    "aliases": [
+        "Mona Renee Jackson"
+    ],
+    "publication": "2022-04-04T09:47:00",
+    "url": "https://www.fbi.gov/wanted/seeking-info/mona-renee-vallo",
+    "warning_message": null,
+    "age_max": null,
+    "additional_information": null,
+    "weight_min": 140,
+    "height_min": 62,
+    "field_offices": [
+        "albuquerque"
+    ],
+    "age_min": null,
+    "occupations": null,
+    "height_max": 62,
+    "details": "<p>On March 9, 2022, passers-by discovered the body of Mona Renee Vallo on U.S. Route 66, New Mexico Highway 124, mile marker 20, in Laguna Pueblo, New Mexico.</p>\r\n<p> </p>\r\n<p>Her injuries were consistent with a hit-and-run crash. She may have been struck at approximately 7:00 p.m.</p>\r\n<p> </p>\r\n<p>Vallo was a member of the Confederated Tribes and Bands of the Yakama Nation and a resident of Acoma, New Mexico.</p>",
+    "weight_max": 140,
+    "coordinates": [],
+    "sex": "Female",
+    "scars_and_marks": null,
+    "build": null,
+    "reward_max": 0,
+    "nationality": null,
+    "reward_min": 0,
+    "caution": null,
+    "suspects": null,
+    "race": "native",
+    "hair": "black",
+    "modified": "2022-04-04T15:48:16+00:00",
+    "weight": "140 pounds",
+    "place_of_birth": null,
+    "description": "Deceased Individual\r\nLaguna Pueblo, New Mexico\r\nMarch 9, 2022",
+    "age_range": null,
+    "legat_names": null,
+    "title": "MONA RENEE VALLO",
+    "eyes_raw": "Brown",
+    "files": null,
+    "locations": null,
+    "images": [
+        {
+            "original": "https://www.fbi.gov/wanted/seeking-info/mona-renee-vallo/@@images/image",
+            "thumb": "https://www.fbi.gov/wanted/seeking-info/mona-renee-vallo/@@images/image/thumb",
+            "large": "https://www.fbi.gov/wanted/seeking-info/mona-renee-vallo/@@images/image/large",
+            "caption": "Photograph taken in 2021"
+        }
+    ],
+    "uid": "714d720712d940389b85fd1535031e0c",
+    "hair_raw": "Black",
+    "status": "na",
+    "remarks": null,
+    "path": "/wanted/seeking-info/mona-renee-vallo",
+    "complexion": null,
+    "possible_states": null,
+    "eyes": "brown",
+    "subjects": [
+        "Seeking Information",
+        "Indian Country"
+    ],
+    "languages": null,
+    "ncic": null,
+    "possible_countries": null,
+    "dates_of_birth_used": [
+        "July 24, 1965"
+    ],
+    "person_classification": "Main",
+    "race_raw": "Native American",
+    "@id": "https://api.fbi.gov/@wanted-person/714d720712d940389b85fd1535031e0c"
+}
