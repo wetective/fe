@@ -169,6 +169,8 @@ GEM
     orderly (0.1.1)
       capybara (>= 1.1)
       rspec (>= 2.14)
+    pagy (5.10.1)
+      activesupport
     pg (1.4.3)
     popper_js (2.11.6)
     pry (0.14.1)
@@ -310,6 +312,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
   orderly
+  pagy
   pg
   pry
   puma (~> 5.0)

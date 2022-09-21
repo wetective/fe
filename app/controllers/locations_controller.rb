@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   def index
-    @locations = LocationFacade.new.markers
+    @locations = LocationFacade.all
     if params[:city]
       facade = InvestigationFacade.new
       @location = params[:city]
