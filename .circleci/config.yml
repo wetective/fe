@@ -40,3 +40,5 @@ jobs:
             filters:
             branches:
                 only: main
+      - run: heroku run rails bundle install
+      - run: heroku run rails db:{drop,create,migrate,seed}
