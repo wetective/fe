@@ -11,12 +11,12 @@ class InvestigationService
     i = 1
 
     until all_data.count >= total_investigations
-      response_2 = conn.get("wanted/v1/list?page=#{i}")
+      response_2 = conn.get("wanted/v1/list?page=#{i}&pageSize=50")
       all_data << JSON.parse(response_2.body, symbolize_names: true)[:items]
       i += 1
       all_data.flatten!
     end
-    
+
     all_data
   end
 end

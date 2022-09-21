@@ -15,6 +15,7 @@
           <% if investigation.status != "recovered" %>
             <div class="carousel-item <%= 'active' if i == 0 %>">
                 <%= image_tag investigation.mugshot, size: '500', class: 'mx-auto d-block' %>
+                <%= button_to "Investigation Show Page", "/investigations/#{investigation.uid}", class: 'mx-auto d-block', method: :get %>
             </div>
           <% end %>
         <% end %>
