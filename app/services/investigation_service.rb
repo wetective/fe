@@ -1,7 +1,12 @@
 class InvestigationService
+  def self.get_investigations_by_city(city)
+    response = conn.get("wanted/v1/list?field_offices=#{city}")
+    JSON.parse(response.body, symbolize_names: true)[:items]
+  end
 
-  def self.conn
-    Faraday.new(url: 'https://api.fbi.gov/')
+  def self.get_investigations_by_uid(uid)
+    response = conn.get("wanted/v1/list?uid=#{uid}")
+    JSON.parse(response.body, symbolize_names: true)[:items]
   end
 
   def self.get_investigations
@@ -19,4 +24,9 @@ class InvestigationService
 
     all_data
   end
+
+  private
+    def self.conn
+      Faraday.new(url: 'https://api.fbi.gov/')
+    end
 end
