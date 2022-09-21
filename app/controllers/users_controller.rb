@@ -8,7 +8,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = UserFacade.create_user(user_params)
+    user = UserFacade.create_user(user_params)
+    binding.pry
+    user = UserFacade.find_user(user_params[:email])
+    binding.pry
     if @user
       redirect_to root_path
       flash[:success] = "Welcome, #{@user.first_name}!"
