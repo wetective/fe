@@ -59,8 +59,6 @@ RSpec.describe 'The Landing Index Page' do
 
       visit root_path
 
-      save_and_open_page
-
       within '#header-bar' do
         expect(page).to have_css("img[src*='/assets/wetective-logo']")
         expect(page).to have_link('Home', href: root_path)
