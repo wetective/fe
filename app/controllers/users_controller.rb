@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  def show
-    @user = UserFacade.get_user(params[:id])
-  end
+#   def show
+#     @user = UserFacade.get_user(params[:id])
+#   end
 
   def new
     @user = UserFacade.new

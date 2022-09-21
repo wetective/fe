@@ -52,7 +52,7 @@ group :development do
   gem 'web-console', '>= 4.1.0'
 end
 
-group :test do 
+group :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'faker'

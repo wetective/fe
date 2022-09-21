@@ -1,13 +1,12 @@
 class User 
-  attr_reader :first_name,
+  attr_reader :name,
               :email,
               :password
               # :id
 
   def initialize(attributes)
-    @first_name = attributes[:first_name]
-    @email = attributes[:email]
-    @password = attributes[:password]
-    # @id = attributes[:id]
+    @email = attributes[:attributes][:email]
+    @name = attributes[:attributes][:name]
+    @id = attributes[:id]
   end
 end
