@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>Wetective</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,9 +14,6 @@
 
   <body>
     <%= render 'shared/navbar' %>
-      <!-- Will need to add logical for if current_user or not -->
-      <!-- If current_user display options, name, profile pic -->
-      <!-- If not current_user display what is currently below -->
     <div class="container">
       <br>
       <%= yield %>

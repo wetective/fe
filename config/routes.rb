@@ -17,7 +17,5 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-  get '/map', to: 'map#index'
-
   resources :locations, only: [:index, :show]
 end
