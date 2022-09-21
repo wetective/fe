@@ -1,0 +1,13 @@
+<h3>Register a New Account</h3>
+
+<%= form_with url: register_path do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    <%= f.submit :register %>
+<% end %>
+
+<%= button_to "Sign up with Google", '/auth/google_oauth2'  %>
+
+<p>Already have an account? <%= link_to "Sign In", '/login' %></p>

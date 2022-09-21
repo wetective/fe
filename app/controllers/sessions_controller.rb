@@ -1,19 +1,19 @@
 class SessionsController < ApplicationController
   def omniauth
     auth_hash = request.env['omniauth.auth']
-    session[:access_token] = auth_hash[:credentials][:token]
+    session[:user_token] = auth_hash[:credentials][:token]
     user = UserFacade.find_create_user(auth_hash[:info])
-
     redirect_to "/dashboard"
   end
 
   def new
-    @user = User.find_by(username: params[:username]) || User.new
-    session[:user_id] = @user
   end
 
   def create
-    session[:user_id] = params[:user_id]
+    user = UserFacade.find_create_user(params)
+    session[:user_id] = user.id
+    # binding.pry
+
     redirect_to "/dashboard"
   end
 
