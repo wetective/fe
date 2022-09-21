@@ -1,7 +1,12 @@
 class UserService
+    # test / development
     def self.conn
         Faraday.new("http://localhost:4999")
     end
+    # production
+    # def self.conn
+    #     Faraday.new("production url")
+    # end
 
     def self.create_user(data)
         response = conn.post("/api/v1/users/register", {
