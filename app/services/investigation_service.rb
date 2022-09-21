@@ -5,8 +5,18 @@ class InvestigationService
   end
 
   def self.get_investigations
-    response = conn.get('wanted/v1/list')
+    response = conn.get("wanted/v1/list")
+    total_investigations = JSON.parse(response.body, symbolize_names: true)[:total]
+    all_data = []
+    i = 1
 
-    JSON.parse(response.body, symbolize_names: true)[:items]
+    until all_data.count >= total_investigations
+      response_2 = conn.get("wanted/v1/list?page=#{i}&pageSize=50")
+      all_data << JSON.parse(response_2.body, symbolize_names: true)[:items]
+      i += 1
+      all_data.flatten!
+    end
+
+    all_data
   end
 end
