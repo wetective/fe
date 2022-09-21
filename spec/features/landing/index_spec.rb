@@ -7,9 +7,9 @@ RSpec.describe 'The Landing Index Page' do
 
       within '#header-bar' do
         expect(page).to have_css("img[src*='/assets/wetective-logo']")
-        expect(page).to have_link('Home', href: root_path)
-        expect(page).to have_link('Register User') # Add href to path when available
-        expect(page).to have_link('Log In') # Add href to path when available
+        expect(page).to have_link(href: root_path)
+        expect(page).to have_link('Sign Up', href: register_path) # Add href to path when available
+        expect(page).to have_link('Login', href: login_path) # Add href to path when available
       end
     end
 
@@ -59,12 +59,14 @@ RSpec.describe 'The Landing Index Page' do
 
       visit root_path
 
+      save_and_open_page
+
       within '#header-bar' do
         expect(page).to have_css("img[src*='/assets/wetective-logo']")
         expect(page).to have_link('Home', href: root_path)
         expect(page).to have_link('Map', href: map_path) 
         expect(page).to have_link('Browse', href: investigations_path) 
-        expect(page).to have_link('Log Out', href: logout_path) 
+        expect(page).to have_link('Logout', href: logout_path) 
       end
     end
 
