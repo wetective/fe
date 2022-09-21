@@ -1,9 +1,10 @@
 <div id="<%= @location %>_results">
-  <div id="city-row">
+  <br>
+  <div id="city-row" class="position-relative">
     <h2><%= @location %></h2>
   </div>
   <div id="city-row">
-    <%= button_to "clear", reset, class: "btn btn-outline-secondary btn-sm" %>
+    <%= button_to "clear", reset, class: "btn btn-outline-secondary mb-2", style: "--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .15rem; --bs-btn-font-size: .55rem;" %>
   </div>
 
   <br>

@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id='header-bar'>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light bg-gradient" id='header-bar'>
   <%= link_to image_tag('wetective-logo.png', alt: 'Wetective Logo', width: '100'), root_path %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,19 +7,3 @@
   <%= render 'shared/login_links' %>
 
 </nav>
-=======
-<nav class="navbar navbar-expand-lg sticky-top bg-light">
-  <div class="container-fluid">
-    <a href="/"><%= image_tag('wetective-logo.png', width: 200) %></a>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <%= yield :nav_links %>
-      </ul>
-
-      <span class="navbar-text">
-        <%# <%= render "shared/nav_login_logout" %> 
-      </span>
-    </div>
-  </div>
-</nav>
->>>>>>> origin/turbo
