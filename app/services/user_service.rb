@@ -13,7 +13,7 @@ class UserService
             email: data[:email],
             name: data[:name]
         }.to_json, "Content-Type" => "application/json")
-        
+
         JSON.parse(response.body, symbolize_names: true)
     end
 
@@ -22,7 +22,7 @@ class UserService
             email: data[:email],
             name: data[:name]
         }.to_json, "Content-Type" => "application/json")
-        
+
         JSON.parse(response.body, symbolize_names: true)
     end
 end
