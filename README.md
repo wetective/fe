@@ -18,7 +18,7 @@
 
 ## App
 
-Wetectives app can be found on [Heroku](https://wetective-fe.herokuapp.com).
+The Wetective app can be found [on Heroku at the link here](https://wetective-fe.herokuapp.com).
 
 ## Background
 
