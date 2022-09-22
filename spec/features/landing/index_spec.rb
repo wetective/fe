@@ -23,7 +23,7 @@ RSpec.describe 'The Landing Index Page' do
         id: 123
       }
 
-      user1 = User.new(attrs)
+      user1 = UserPoro.new(attrs)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)    
 

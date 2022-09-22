@@ -4,7 +4,7 @@ RSpec.describe Investigation do
   xit 'exists and has attributes' do
     data = JSON.parse(File.read('spec/fixtures/fbi_investigations_response.json'), symbolize_names: true)[:items][0]
 
-    investigation = Investigation.new(data)
+    investigation = InvestigationPoro.new(data)
 
     expect(investigation).to be_a(Investigation)
     expect(investigation.files).to eq("https://www.fbi.gov/wanted/wcc/christopher-c-gardner/download.pdf")

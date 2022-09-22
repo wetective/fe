@@ -10,7 +10,7 @@ class TipFacade
   def users_tips(user_id)
     tips = TipService.get_user_tips(user_id)
     tips.each do |tip|
-      Tip.new(tip)
+      TipPoro.new(tip)
     end
   end
 end

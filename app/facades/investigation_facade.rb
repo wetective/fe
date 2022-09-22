@@ -4,7 +4,7 @@ class InvestigationFacade
 
     investigations.map do |investigation|
       if investigation[:status] != 'captured'
-        Investigation.new(investigation)
+        InvestigationPoro.new(investigation)
       end
     end
   end  
@@ -14,7 +14,7 @@ class InvestigationFacade
  
     investigations.select do |investigation|
       if investigation[:status] != 'captured' && investigation[:uid] == uid
-       return Investigation.new(investigation)
+       return InvestigationPoro.new(investigation)
       end
     end
   end
@@ -22,7 +22,7 @@ class InvestigationFacade
   def cities_investigations(city)
     investigations = InvestigationService.get_investigations_by_city(city.downcase.tr(" ", ""))
     investigations.map do |investigation|
-      Investigation.new(investigation)
+      InvestigationPoro.new(investigation)
     end
   end
 end
