@@ -48,7 +48,7 @@ gem "omniauth-rails_csrf_protection"
 gem "pagy"
 
 # Use font-awesome for icons
-gem 'font-awesome-less'
+gem 'font-awesome-sass'
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # gem "webpacker", "~> 5.0"
