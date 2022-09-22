@@ -1,4 +1,4 @@
-# Wetectives Back End Repo
+# Wetectives Front End Repo
 
 ![ruby](https://img.shields.io/badge/Ruby-2.7.4-red)
 ![rails](https://img.shields.io/badge/Rails-5.2.8.1-red)
