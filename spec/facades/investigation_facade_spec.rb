@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe InvestigationFacade do
   describe '::create_investigations', :vcr do
     context 'happy path' do
-      xit 'returns a list of investigations as objects with attributes' do
+      it 'returns a list of investigations as objects with attributes' do
         investigation = InvestigationFacade.create_investigations[2]
         
         expect(investigation.files).to be_a(String)
@@ -21,8 +21,8 @@ RSpec.describe InvestigationFacade do
         expect(investigation.uid).to be_a(String)
         expect(investigation.eyes).to be_a(String)
         expect(investigation.status).to be_a(String)
-        expect(investigation.subjects).to be_an(String)
-        expect(investigation.dates_of_birth_used).to be_an(String)
+        expect(investigation.subjects).to be_an(Array)
+        expect(investigation.dates_of_birth_used).to be_an(Array)
       end
     end
     
@@ -33,7 +33,7 @@ RSpec.describe InvestigationFacade do
   
   describe '::create_investigation', :vcr do
     context 'happy path' do
-      xit 'returns a single investigation by uid as an object with attributes' do
+      it 'returns a single investigation by uid as an object with attributes' do
         investigation = InvestigationFacade.create_investigation("714d720712d940389b85fd1535031e0c")
 
         expect(investigation.files).to be_a(String)
@@ -51,8 +51,8 @@ RSpec.describe InvestigationFacade do
         expect(investigation.uid).to be_a(String)
         expect(investigation.eyes).to be_a(String)
         expect(investigation.status).to be_a(String)
-        expect(investigation.subjects).to be_an(String)
-        expect(investigation.dates_of_birth_used).to be_an(String)
+        expect(investigation.subjects).to be_an(Array)
+        expect(investigation.dates_of_birth_used).to be_an(Array)
       end
     end
     
