@@ -3,7 +3,7 @@
       <div class="card border-0 shadow rounded-3 my-1">
         <div class="card-body p-4 p-sm-5">
           <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
-            <%= form_with url: new_user_url, local: true do |form| %>
+            <%= form_with url: signup_url, local: true do |form| %>
               <div class="form-floating mb-3">
                 <%= form.label :email, { for: "floatingInput" } %>
                 <%= form.text_field :email, { class: "form-control", id: "floatingInput", placeholder: "name@example.com", required: true } %>

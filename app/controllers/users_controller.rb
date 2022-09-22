@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = UserFacade.new
+    @user ||= UserFacade.find_user(params[:email])
   end
 
   def create
@@ -19,12 +19,13 @@ class UsersController < ApplicationController
         redirect_to user_dashboard_path
         render :notice, "Welcome, #{@user.first_name}!"
       else
-        redirect_to new_user_path
+        redirect_to signup_path
         render :alert, "We could not create your account at this time. Please check your inputs and try again."
       end
     end
   end
 
+  def signup; end
 
   private
     def user_params

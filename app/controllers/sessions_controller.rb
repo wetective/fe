@@ -1,4 +1,21 @@
 class SessionsController < ApplicationController
+  def new
+    @user ||= User.find_by(username: params[:username])
+    session[:user] = @user
+  end
+
+  def create
+    @user = User.find_by(username: params[:username])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to user_dashboard_path
+    else
+      render :login, alert: "Sorry, your credentials are bad."
+    end
+  end
+
+  def login; end
+
   def omniauth
     auth_hash = request.env['omniauth.auth']
     session[:user_token] = auth_hash[:credentials][:token]
@@ -10,22 +27,22 @@ class SessionsController < ApplicationController
     end
   end
 
-  def new
-    if params[:email]
-      find_user
-    end
-  end
+  # def new
+  #   if params[:email]
+  #     find_user
+  #   end
+  # end
 
-  def create
-    user = find_user
-    if user == nil
-      user = UserFacade.create_user(params)
-      session[:user_id] = user.id
-      redirect_to user_dashboard_path
-    else
-      render :new, notice: "Sorry, your we could not log you in."
-    end
-  end
+  # def create
+  #   user = find_user
+  #   if user == nil
+  #     user = UserFacade.create_user(params)
+  #     session[:user_id] = user.id
+  #     redirect_to user_dashboard_path
+  #   else
+  #     render :new, notice: "Sorry, your we could not log you in."
+  #   end
+  # end
 
   def destroy
     session.destroy
