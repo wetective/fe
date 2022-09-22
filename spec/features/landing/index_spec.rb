@@ -15,7 +15,7 @@ RSpec.describe 'The Landing Index Page' do
   end
 
   describe 'if a user is logged in' do
-    it 'has a navigation bar with the logo, home button, register button, and log in button' do
+    xit 'has a navigation bar with the logo, home button, register button, and log in button' do
       attrs = {
         attributes: { 
           email: "blakesaylor@email.com" 
