@@ -1,27 +1,31 @@
-<%= image_tag('wetective-logo.png', class: 'mx-auto d-block', height: '150') %>
+<div class="video-wrapper">
+  <%= video_tag "People.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "landing_video" %>
 
-<div class='container text-center'>
-  <h2>Browse Real Investigations</h2>
-  <h3>Help Solve Real Crimes</h3>
-</div>
+  <%= image_tag('wetective-logo.png', class: 'mx-auto d-block', height: '150') %>
 
-<br>
+  <div class='container text-center'>
+    <h2 class="landing">Browse Real Investigations</h2>
+    <h3 class="landing">Help Solve Real Crimes</h3>
+  </div>
 
-<div class="container" id='investigations-most-wanted-section'>
-  <div class="row">
-    <div class="col-6" id ='investigations-most-wanted-left' align='center'>
-      <h3>Open Investigations</h3>
-      <p>Help find missing persons</p>
-    </div>
-    <div class="col-6" id='investigations-most-wanted-right' align='center'>
-      <h3>Most Wanted</h3>
-      <p>Help find fugitives</p>
+  <br>
+
+  <div class="container" id='investigations-most-wanted-section'>
+    <div class="row">
+      <div class="col-6" id ='investigations-most-wanted-left' align='center'>
+        <h3 class="landing">Open Investigations</h3>
+        <p class="landing">Help find missing persons</p>
+      </div>
+      <div class="col-6" id='investigations-most-wanted-right' align='center'>
+        <h3 class="landing">Most Wanted</h3>
+        <p class="landing">Help find fugitives</p>
+      </div>
     </div>
   </div>
-</div>
 
-<hr>
+  <hr>
 
-<div class='container' id='active-cases-section' align='center'>
-  <%= image_tag('fbi-wanted-poster.png', class: 'mx-auto d-block', height: '600') %>
+  <div class='container' id='active-cases-section' align='center'>
+    <%= image_tag('fbi-wanted-poster.png', class: 'mx-auto d-block', height: '600') %>
+  </div>
 </div>

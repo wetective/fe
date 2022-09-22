@@ -15,12 +15,42 @@
 
 @import 'bootstrap';
 
+.navbar navbar-expand-lg sticky-top shadow-sm p-3 mb-5 bg-body {
+  background-color: rgb(196, 75, 75);
+}
+
 .nav-link {
-  color: white;
+  color: rgb(0, 0, 0);
+}
+
+.landing_video {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  z-index: -2;
+ }
+
+.video-wrapper {
+  height: 100vh;
+  display: flex;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content {
   font-size: medium;
+}
+
+.h2.landing {
+  color: white;
+}
+
+.h3.landing {
+  color: white;
+}
+
+.p.landing {
+  color: white;
 }
 
 #city-row {
