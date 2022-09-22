@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index'
   
   get '/login', to: 'sessions#new'
+  get '/logout', to: 'sessions#destroy'
 
   resources :users do
     get '/dashboard', to: 'dashboard#index', as: 'dashboard'
