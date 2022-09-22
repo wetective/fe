@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <%= video_tag "city.mp4", 
+    <%= video_tag "people.mp4", 
         autoplay: :autoplay, 
         loop: :loop, 
         muted: :muted, 
@@ -27,9 +27,8 @@
 
     <div class="container">
       <p id="message"><%= notice || alert %></p>
-
       <div class="card border-0" id="card-background">
-        <div class="card-body p-5">
+        <div class="card-body p-4">
           <%= yield %>
         </div>
       </div>

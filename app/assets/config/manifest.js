@@ -3,4 +3,3 @@
 // @import "bootstrap";
 // = require leaflet
 //= link people.mp4
-//= link city.mp4
