@@ -10,12 +10,6 @@ RSpec.describe "User Dashboard" do
 
   it "displays a users tips" do
     visit "/users/1/dashboard"
-    binding.pry
-    save_and_open_page
-    #
-    # user_tips = JSON.parse(response.body, symbolize_names: true)
-    # user_data = user_tips[:data]
-    # binding.pry
   end
 
 end
