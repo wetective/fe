@@ -1,6 +1,6 @@
-<% if current_user %>
+<% if user_exists? %>
     <p>You're already signed up.</p>
-    <p><%= link_to "Click here to go to your dashboard.", user_dashboard_path %></p>
+    <p><%= link_to "Click here to login to your account.", login_path %></p>
 <% else %>
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
