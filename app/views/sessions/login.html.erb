@@ -1,4 +1,4 @@
-<h3>Login</h3>
+<h3 class='container col-6 text-center'>Login</h3>
 
 <% if current_user %>
     <p>You're already logged in.</p>
@@ -22,12 +22,10 @@
           <tr class="row">
             <th class="col-3 align-middle">
               <%= form.submit "Login", type: :submit, class: "btn btn-primary position-absolute start-0" %>
+              <% end %>
             </th>
             <th class="col-5">
-              <a class="oauth-container btn btn-light darken-4 white black-text me-3 shadow-sm mb-5 bg-body rounded" href='/auth/google_oauth2' >
-                  <img alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" width="16" height="16" target="_blank" />
-                Login with Google
-              </a>
+              <%= button_to "Sign Up with Google", '/auth/google_oauth2', class: "oauth-container btn btn-light darken-4 white black-text me-3 shadow-sm mb-5 bg-body rounded" %>
             </th>
             <th class="col-3">
               <%= link_to "Sign Up Instead", register_path, class: "position-absolute end-0 mt-2" %></div>
@@ -36,6 +34,5 @@
         </thead>
       </table>
     </div>
-  <% end %>
 <% end %>
 

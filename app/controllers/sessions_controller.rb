@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
     user = UserFacade.find_create_user(auth_hash[:info])
     if user
       redirect_to user_dashboard_path(user.id)
+      flash[:success] = "Successfully Logged In"
     else
       render :new, notice: "Sorry, your we could not log you in."
     end
@@ -17,11 +18,12 @@ class SessionsController < ApplicationController
     user = UserFacade.find_create_user(params)
     session[:user_id] = user.id
     redirect_to user_dashboard_path(user.id)
+    flash[:success] = "Successfully Logged In"
   end
 
   def destroy
     session.destroy
-    flash[:success] = "Successfully Logged Out"
     redirect_to root_path
+    flash[:success] = "Successfully Logged Out"
   end
 end
