@@ -1,12 +1,10 @@
 <center>
 <br><br>
 
-<% if @investigation.files != nil %>
   <div class="pdf">
     <iframe src="http://docs.google.com/gview?url=<%= @investigation.files %>&embedded=true" style="width:818px; height:800px;" frameborder="0"></iframe>
   </div>
-
-<% else %>
+  
   <h1>WANTED: <%= @investigation.title %></h1>
 
   <h2><%= @investigation.subjects %><br></h2>
@@ -27,6 +25,4 @@
   <p>Eye Color: <%= @investigation.eyes %><br></p>
   <p>Weight: <%= @investigation.weight %><br></p>
   <p>Scars and Marks: <%= @investigation.scars_and_marks %><br></p>
-<% end %>
-
 </center>

@@ -10,7 +10,7 @@ RSpec.describe 'Investigation index page' do
   it "checks to see if there is a button to each investigations show page", :vcr do
     visit '/investigations'
 
-    first(:button, "Investigation Show Page").click
+    first(:button, "See More Details").click
     expect(current_path).to eq("/investigations/11954299cdfd402ca45449793d6e24c5")
   end
 end
