@@ -27,23 +27,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  # def new
-  #   if params[:email]
-  #     find_user
-  #   end
-  # end
-
-  # def create
-  #   user = find_user
-  #   if user == nil
-  #     user = UserFacade.create_user(params)
-  #     session[:user_id] = user.id
-  #     redirect_to user_dashboard_path
-  #   else
-  #     render :new, notice: "Sorry, your we could not log you in."
-  #   end
-  # end
-
   def destroy
     session.destroy
     render '/', notice: "You have successfully logged out."
@@ -51,10 +34,6 @@ class SessionsController < ApplicationController
   end
 
   private
-    def find_user
-      @user = UserFacade.find_user(params[:email])
-    end
-
     def user_params
       params.permit(:email, :password)
     end
