@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     binding.pry
     user = UserFacade.find_create_user(auth_hash[:info])
     if user
-      redirect_to user_dashboard_path
+      redirect_to user_dashboard_path(user.id)
     else
       render :new, notice: "Sorry, we could not log you in."
     end
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     binding.pry
     user = UserFacade.find_create_user(params)
     session[:user_id] = user.id
-    redirect_to user_dashboard_path
+    redirect_to user_dashboard_path(user.id)
   end
 
   def destroy
