@@ -1,18 +1,41 @@
 <h3>Login</h3>
 
 <% if current_user %>
-    <p>You're already logged in</p>
+    <p>You're already logged in.</p>
+    <p><%= link_to "Click here to logout.", logout_path %></p>
 
 <% else %>
-    <%= form_with url: login_path do |f| %>
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-        <%= f.label :password %>
-        <%= f.text_field :password %>
-        <%= f.submit :login %>
-    <% end %>
+  <%= form_with url: login_url, local: true do |form| %>
+    <div class="container col-6">
+      <div class="input-group py-2">
+          <%= form.label :email, { class: "input-group-text" } %><br>
+          <%= form.text_field :email, { class: "form-control", id: "text-input-area", required: true } %></p>
+      </div>
 
-    <p>Don't have an account? <%= link_to "Register Now", '/register' %></p>
+      <div class="input-group py-2">
+          <%= form.label :password, { class: "input-group-text" } %><br>
+          <%= form.password_field :password, { class: "form-control", id: "text-input-area", required: true } %></p>
+      </div>
 
-    <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+      <table class="container position-relative pt-1">
+        <thead>
+          <tr class="row">
+            <th class="col-3 align-middle">
+              <%= form.submit "Login", type: :submit, class: "btn btn-primary position-absolute start-0" %>
+            </th>
+            <th class="col-5">
+              <a class="oauth-container btn btn-light darken-4 white black-text me-3 shadow-sm mb-5 bg-body rounded" href='/auth/google_oauth2' >
+                  <img alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" width="16" height="16" target="_blank" />
+                Login with Google
+              </a>
+            </th>
+            <th class="col-3">
+              <%= link_to "Sign Up Instead", register_path, class: "position-absolute end-0 mt-2" %></div>
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  <% end %>
 <% end %>
+
