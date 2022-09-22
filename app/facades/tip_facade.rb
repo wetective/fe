@@ -10,10 +10,7 @@ class TipFacade
   def self.users_tips(user_id)
     tips = TipService.find_tips(user_id)
     tips.each do |tip|
-      binding.pry
       Tip.new(tip)
-      binding.pry
     end
-    binding.pry
   end
 end
