@@ -22,6 +22,7 @@ class UsersController < ApplicationController
         redirect_to new_user_path
         render :alert, "We could not create your account at this time. Please check your inputs and try again."
       end
+    end
   end
 
 

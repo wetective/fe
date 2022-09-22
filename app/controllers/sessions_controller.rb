@@ -11,7 +11,9 @@ class SessionsController < ApplicationController
   end
 
   def new
-    find_user
+    if params[:email]
+      find_user
+    end
   end
 
   def create
