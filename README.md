@@ -3,6 +3,8 @@
 ![ruby](https://img.shields.io/badge/Ruby-2.7.4-red)
 ![rails](https://img.shields.io/badge/Rails-5.2.8.1-red)
 ![rspec](https://img.shields.io/badge/RSpec-3.11.0-green)
+![bootstrap](https://img.shields.io/badge/Bootstrap-5.2.1-purple)
+![openstreetmap](https://img.shields.io/badge/OpenStreetMap-_-blue)
 ![contributors](https://img.shields.io/badge/Contributors-5-yellow)
 
 ## Table of Contents
