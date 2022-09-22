@@ -1,27 +1,35 @@
-  <%= image_tag('wetective-logo.png', class: 'mx-auto d-block', height: '150') %>
+<div class="row">
+  <div class="mx-auto">
+    <div class="card border-0 shadow rounded-3 my-1">
+      <div class="card-body p-4 p-sm-5">
+        <%= image_tag('wetective-logo.png', class: 'mx-auto d-block', height: '150') %>
 
-  <div class='container text-center'>
-    <h2 class="landing">Browse Real Investigations</h2>
-    <h3 class="landing">Help Solve Real Crimes</h3>
-  </div>
+        <div class='container text-center'>
+          <h2 class="landing">Browse Real Investigations</h2>
+          <h3 class="landing">Help Solve Real Crimes</h3>
+        </div>
 
-  <br>
+        <br>
 
-  <div class="container" id='investigations-most-wanted-section'>
-    <div class="row">
-      <div class="col-6" id ='investigations-most-wanted-left' align='center'>
-        <h3 class="landing">Open Investigations</h3>
-        <p class="landing">Help find missing persons</p>
-      </div>
-      <div class="col-6" id='investigations-most-wanted-right' align='center'>
-        <h3 class="landing">Most Wanted</h3>
-        <p class="landing">Help find fugitives</p>
+        <div class="container" id='investigations-most-wanted-section'>
+          <div class="row">
+            <div class="col-6" id ='investigations-most-wanted-left' align='center'>
+              <h3 class="landing">Open Investigations</h3>
+              <p class="landing">Help find missing persons</p>
+            </div>
+            <div class="col-6" id='investigations-most-wanted-right' align='center'>
+              <h3 class="landing">Most Wanted</h3>
+              <p class="landing">Help find fugitives</p>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class='container' id='active-cases-section' align='center'>
+          <%= image_tag('fbi-wanted-poster.png', class: 'mx-auto d-block', height: '600') %>
+        </div>
       </div>
     </div>
   </div>
-
-  <hr>
-
-  <div class='container' id='active-cases-section' align='center'>
-    <%= image_tag('fbi-wanted-poster.png', class: 'mx-auto d-block', height: '600') %>
-  </div>
+</div>
