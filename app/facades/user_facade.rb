@@ -1,4 +1,11 @@
 class UserFacade 
+  def self.find_and_authenticate(email, password)
+    unless email == nil || password == nil
+      user = UserService.authenticate_user(data)
+      @user = UserPoro.new(user[:data])
+    end
+  end
+
   def self.find_or_create(data)
     user = UserService.find_user(data)
     if user == nil
@@ -17,13 +24,6 @@ class UserFacade
   def self.create_user(data)
     unless data == nil
       user = UserService.create_user(data)
-      @user = UserPoro.new(user[:data])
-    end
-  end
-
-  def find_and_authenticate(email, password)
-    unless data == nil
-      user = UserService.authenticate_user(data)
       @user = UserPoro.new(user[:data])
     end
   end

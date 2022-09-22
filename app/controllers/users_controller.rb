@@ -41,10 +41,4 @@ class UsersController < ApplicationController
         redirect_to auth_login_path, notice: "Sorry, your we could not log you in."
       end
     end
-
-    def set_session(user)
-      session[:user_id] = user.id
-      session[:email] = user.email
-      session[:image] = user.image
-    end
 end
