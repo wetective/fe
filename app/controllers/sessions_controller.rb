@@ -1,11 +1,11 @@
 class SessionsController < ApplicationController
   def new
-    @user ||= UserFacade.find_by(username: params[:username])
+    @user ||= UserFacade.find_user(params[:email])
     session[:user] = @user
   end
 
   def create
-    @user = UserFacade.find_by(username: params[:username])
+    @user = UserFacade.find_user(params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to user_dashboard_path
