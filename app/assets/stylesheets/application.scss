@@ -95,3 +95,51 @@ body {
   font-size: 55px;
   color: black;
 }
+
+body{margin-top:20px;}
+.social-icon.social li a {
+    color: #ffffff;
+    border-color: #cfcfcf;
+}
+
+.social-icon li a {
+    color: #e00e0e;
+    border: 1px solid #ffffff;
+    display: inline-block;
+    height: 32px;
+    text-align: center;
+    font-size: 15px;
+    width: 32px;
+    line-height: 27px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.rounded {
+    border-radius: 5px !important;
+}
+
+footer {
+  position: relative;
+  padding: 50px 0;
+}
+
+footer .logo-footer {
+  font-size: 28px;
+}
+
+footer.footer-bar {
+  padding: 30px 0;
+}
+
+footer .footer-text {
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+footer .footer-text:hover {
+  color: #a0a0a0;
+}
