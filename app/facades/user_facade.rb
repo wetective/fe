@@ -5,8 +5,15 @@ class UserFacade
   end
 
   def self.find_user(data)
-    user = UserService.find_user(data)
-    unless user == nil
+    unless data == nil
+      user = UserService.find_user(data)
+      @user = UserPoro.new(user[:data])
+    end
+  end
+
+  def self.create_user(data)
+    unless data == nil
+      user = UserService.create_user(data)
       @user = UserPoro.new(user[:data])
     end
   end
