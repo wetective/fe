@@ -31,8 +31,8 @@ body {
   font-family: "Mulish", sans-serif;
 }
 
-.navbar navbar-expand-lg sticky-top shadow-sm p-3 mb-5 bg-body {
-  background-color: rgb(196, 75, 75);
+.navbar navbar-expand-lg sticky-top shadow-sm p-3 bg-body {
+  background-color: rgb(255, 255, 255);
 }
 
 .nav-link {
@@ -96,25 +96,8 @@ body {
   color: black;
 }
 
-body{margin-top:20px;}
-.social-icon.social li a {
-    color: #ffffff;
-    border-color: #cfcfcf;
-}
-
-.social-icon li a {
-    color: #e00e0e;
-    border: 1px solid #ffffff;
-    display: inline-block;
-    height: 32px;
-    text-align: center;
-    font-size: 15px;
-    width: 32px;
-    line-height: 27px;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-    overflow: hidden;
-    position: relative;
+btn btn-social-icon btn-instagram rounded {
+  background-color: #000000;
 }
 
 .rounded {
@@ -122,8 +105,9 @@ body{margin-top:20px;}
 }
 
 footer {
+  background-color: #ffffff;
   position: relative;
-  padding: 50px 0;
+  padding: 30px 0;
 }
 
 footer .logo-footer {
@@ -135,7 +119,7 @@ footer.footer-bar {
 }
 
 footer .footer-text {
-  color: #ffffff;
+  color: #2f2f2f;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }

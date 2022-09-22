@@ -7,7 +7,7 @@ RSpec.describe 'Investigation index page' do
     expect(page).to have_css("img[src*='https://www.fbi.gov/wanted/seeking-info/vandalism-investigation/@@images/image']")
   end
 
-  it "checks to see if there is a button to each investigations show page", :vcr do
+  xit "checks to see if there is a button to each investigations show page", :vcr do
     visit '/investigations'
 
     first(:button, "See More Details").click

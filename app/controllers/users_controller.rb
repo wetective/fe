@@ -19,13 +19,13 @@ class UsersController < ApplicationController
         redirect_to user_dashboard_path
         render :notice, "Welcome, #{@user.first_name}!"
       else
-        redirect_to signup_path
+        redirect_to register_path
         render :alert, "We could not create your account at this time. Please check your inputs and try again."
       end
     end
   end
 
-  def signup; end
+  def register; end
 
   private
     def user_params

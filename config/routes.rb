@@ -5,15 +5,19 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
   
   get '/login', to: 'sessions#login', as: 'login'
-  get '/logout', to: 'sessions#destroy', as: 'logout'
+  post '/login', to: 'sessions#create'
 
-  get '/signup', to: 'users#signup', as: 'signup'
+  get '/logout', to: 'sessions#destroy'
+
+  get '/register', to: 'sessions#register'
+  post '/register', to: 'sessions#create'
+
+  get '/locations/results', to: 'locations#results', as: 'results'
 
   resources :users do
     get '/dashboard', to: 'dashboard#index', as: 'dashboard'
   end
   
-  resources :locations, only: [:index]
   resources :investigations, only: [:index, :show]
-  resources :sessions, only: [:new, :create]
+  resources :locations, only: [:index, :show]
 end

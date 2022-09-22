@@ -47,6 +47,9 @@ gem "omniauth-rails_csrf_protection"
 # Use pagy for pagination
 gem "pagy"
 
+# Use font-awesome for icons
+gem 'font-awesome-less'
+
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # gem "webpacker", "~> 5.0"
 
