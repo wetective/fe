@@ -10,8 +10,7 @@ class UserService
 
   def self.find_user(data)
     response = conn.post("/api/v1/users/find", {
-      email: data[:email],
-      name: data[:name]
+      email: data
     }.to_json, "Content-Type" => "application/json")
     
     JSON.parse(response.body, symbolize_names: true)

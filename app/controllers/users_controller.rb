@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = UserFacade.find_user(user_params[:email])
+    @user = @user.find_user(params[:email])
     unless @user == nil
       @user = UserFacade.create_user(user_params)
       if user

@@ -1,43 +1,38 @@
-<% if user_exists? %>
-    <p>You're already signed up.</p>
-    <p><%= link_to "Click here to login to your account.", login_path %></p>
-<% else %>
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card border-0 shadow rounded-3 my-1">
-          <div class="card-body p-4 p-sm-5">
-            <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
-              <%= form_with url: new_user_url, local: true do |form| %>
-                <div class="form-floating mb-3">
-                  <%= form.label :email, { for: "floatingInput" } %>
-                  <%= form.text_field :email, { class: "form-control", id: "floatingInput", placeholder: "name@example.com", required: true } %>
-                </div>
-                <div class="form-floating mb-3">
-                  <%= form.label :password, { for: "floatingPassword" } %>
-                  <%= form.text_field :password, { class: "form-control", id: "floatingPassword", placeholder: "Password", type: "password", required: true } %>
-                </div>
-                <div class="form-floating mb-3">
-                  <%= form.label :password_confirmation, { for: "floatingPasswordConfirmation" } %>
-                  <%= form.text_field :password_confirmation, { class: "form-control", id: "floatingPasswordConfirmation", placeholder: "Password", type: "password", required: true } %>
-                </div>
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-1">
+        <div class="card-body p-4 p-sm-5">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
+            <%= form_with url: new_user_url, local: true do |form| %>
+              <div class="form-floating mb-3">
+                <%= form.label :email, { for: "floatingInput" } %>
+                <%= form.text_field :email, { class: "form-control", id: "floatingInput", placeholder: "name@example.com", required: true } %>
+              </div>
+              <div class="form-floating mb-3">
+                <%= form.label :password, { for: "floatingPassword" } %>
+                <%= form.text_field :password, { class: "form-control", id: "floatingPassword", placeholder: "Password", type: "password", required: true } %>
+              </div>
+              <div class="form-floating mb-3">
+                <%= form.label :password_confirmation, { for: "floatingPasswordConfirmation" } %>
+                <%= form.text_field :password_confirmation, { class: "form-control", id: "floatingPasswordConfirmation", placeholder: "Password", type: "password", required: true } %>
+              </div>
 
-                <div class="d-grid">
-                  <%= form.submit "Sign Up", type: :submit, class: "btn btn-primary btn-login text-uppercase fw-bold" %>
-                </div>
-                <hr class="my-3">
-                <div class="d-grid">
-                  <a class="btn btn-login white black-text me-3 shadow-sm rounded" href="/auth/google_oauth2" id="oauth-container">
-                  <img alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" width="16" height="16" target="_blank" />
-                    Sign Up with Google
-                  </a>
-                </div>
-                <hr>
-                <div class="mb-2">
-                  <%= link_to "Click Here to Login Instead", login_path %>
-                </div>
-            <% end %>
-          </div>
+              <div class="d-grid">
+                <%= form.submit "Sign Up", type: :submit, class: "btn btn-primary btn-login text-uppercase fw-bold" %>
+              </div>
+              <hr class="my-3">
+              <div class="d-grid">
+                <a class="btn btn-login white black-text me-3 shadow-sm rounded" href="/auth/google_oauth2" id="oauth-container">
+                <img alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" width="16" height="16" target="_blank" />
+                  Sign Up with Google
+                </a>
+              </div>
+              <hr>
+              <div class="mb-2">
+                <%= link_to "Click Here to Login Instead", login_path %>
+              </div>
+          <% end %>
         </div>
       </div>
     </div>
-<% end %>
+  </div>

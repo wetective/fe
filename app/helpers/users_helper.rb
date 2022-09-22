@@ -7,7 +7,7 @@ module UsersHelper
     end
   end
 
-  def user_exists?(email)
-    UserFacade.find_by(email: email)
+  def user_exists?
+    UserFacade.find_user(params[:email])
   end
 end
