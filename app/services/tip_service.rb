@@ -18,12 +18,12 @@ class TipService
 
   private
     # test / development
-    # def self.conn
-    #   Faraday.new("http://localhost:4999")
-    # end
+    def self.conn
+      Faraday.new("http://localhost:4999")
+    end
 
     # production
-    def self.conn
-        Faraday.new("https://wetective-be.herokuapp.com")
-    end
+    # def self.conn
+    #     Faraday.new("https://wetective-be.herokuapp.com")
+    # end
 end
