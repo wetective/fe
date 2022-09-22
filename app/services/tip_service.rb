@@ -1,12 +1,18 @@
 class TipService
-  def self.create_tip(user_id)
-      response = conn.post("/api/v1/user/#{user_id}/tips/new")
-      }.to_json, "Content-Type" => "application/json")
+  def self.create_tip(data)
+    response = conn.post("/api/v1/user/#{data[:user_id]}/tips/new", {
+      uid: data[:uid],
+      description: data[:description],
+      location: data[:location],
+      user_id: data[:user_id]
+    }.to_json, "Content-Type" => "application/json")
+
+    JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.find_tip(data)
+  def self.find_tips(user_id)
     response = conn.get("/api/v1/user/#{user_id}/tips")
-      
+
     JSON.parse(response.body, symbolize_names: true)
   end
 

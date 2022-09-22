@@ -7,10 +7,11 @@ class TipFacade
     TipService.create_tip(data)
   end
 
-  def users_tips(user_id)
-    tips = TipService.get_user_tips(user_id)
+  def self.users_tips(user_id)
+    tips = TipService.find_tips(user_id)
+    binding.pry
     tips.each do |tip|
-      TipPoro.new(tip)
+      Tip.new(tip)
     end
   end
 end
