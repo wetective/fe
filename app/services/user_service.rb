@@ -16,6 +16,15 @@ class UserService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def self.authenticate_user(email, password)
+    response = conn.post("/api/v1/users/authenticate", {
+      email: email,
+      password: password
+    }.to_json, "Content-Type" => "application/json")
+    
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
   private
     # test / development
     def self.conn

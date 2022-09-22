@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = UserFacade.find_user(params[:email])
-    if @user && @user.authenticate(params[:password])
+    @user = UserFacade.find_and_authenticate(params[:email], params[:password])
+    if @user
       session[:user_id] = @user.id
       redirect_to user_dashboard_path
     else
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   def omniauth
     auth_hash = request.env['omniauth.auth']
     session[:user_token] = auth_hash[:credentials][:token]
-    user = UserFacade.find_create_user(auth_hash[:info])
+    user = UserFacade.find_or_create(auth_hash[:info])
     if user
       redirect_to user_dashboard_path
     else
