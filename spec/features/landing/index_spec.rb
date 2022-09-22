@@ -8,7 +8,7 @@ RSpec.describe 'The Landing Index Page' do
       within '#header-bar' do
         expect(page).to have_css("img[src*='/assets/wetective-logo']")
         expect(page).to have_link(href: root_path)
-        expect(page).to have_link('Sign Up', href: register_path) # Add href to path when available
+        expect(page).to have_link('Sign Up', href: new_user_path) # Add href to path when available
         expect(page).to have_link('Login', href: login_path) # Add href to path when available
       end
     end

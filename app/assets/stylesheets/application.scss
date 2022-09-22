@@ -15,6 +15,22 @@
 
 @import 'bootstrap';
 
+h1 {
+  font-family: 'Cairo Play', cursive;
+}
+
+h2 {
+  font-family: 'Cairo Play', cursive;
+}
+
+h3 {
+  font-family: 'Cairo Play', cursive;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+}
+
 .navbar navbar-expand-lg sticky-top shadow-sm p-3 mb-5 bg-body {
   background-color: rgb(196, 75, 75);
 }
@@ -23,18 +39,28 @@
   color: rgb(0, 0, 0);
 }
 
+#card-background {
+  background-color: rgba(255, 255, 255, 0);
+}
+
 .landing_video {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
   object-fit: cover;
   top: 0;
-  z-index: -2;
- }
+  left: 0;
+  z-index: -1;
+  opacity: 0.2;
+  background-repeat: no-repeat;
+}
 
-.video-wrapper {
-  height: 100vh;
-  display: flex;
+#oauth-container:hover, #oauth-container:focus, #oauth-container:active, #oauth-container.active {
+  background-color: #bfbfbf92;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content {

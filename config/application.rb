@@ -21,6 +21,7 @@ Bundler.require(*Rails.groups)
 
 module Fe
   class Application < Rails::Application
+    config.assets.paths << "#{Rails.root}/app/assets/videos"
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
@@ -35,6 +36,5 @@ module Fe
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.assets.paths << "#{Rails.root}/app/assets/videos"
   end
 end

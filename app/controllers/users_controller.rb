@@ -12,15 +12,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = UserFacade.create_user(user_params)
-    user = UserFacade.find_user(user_params[:email])
-    if user
-      redirect_to user_dashboard_path
-      render :notice, "Welcome, #{@user.first_name}!"
-    else
-      redirect_to auth_login_path
-      render :alert, "We could not create your account at this time. Please check your inputs and try again."
-    end
+    @user = UserFacade.find_user(user_params[:email])
+    unless @user == nil
+      @user = UserFacade.create_user(user_params)
+      if user
+        redirect_to user_dashboard_path
+        render :notice, "Welcome, #{@user.first_name}!"
+      else
+        redirect_to new_user_path
+        render :alert, "We could not create your account at this time. Please check your inputs and try again."
+      end
   end
 
 
@@ -42,6 +43,6 @@ class UsersController < ApplicationController
     def set_session(user)
       session[:user_id] = user.id
       session[:email] = user.email
-      # session[:image] = user.image
+      session[:image] = user.image
     end
 end
