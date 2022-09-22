@@ -2,7 +2,7 @@ class Investigation
   attr_reader :files,
               :reward,
               :aliases,
-              :warning_message,
+              :warning,
               :field_offices,
               :sex,
               :scars_and_marks,

@@ -1,0 +1,23 @@
+<div id="<%= @location %>_results">
+  <br>
+  <div id="city-row" class="position-relative">
+    <h2><%= @location %></h2>
+  </div>
+  <div id="city-row">
+    <%= button_to "clear", reset, class: "btn btn-outline-secondary mb-2", style: "--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .15rem; --bs-btn-font-size: .55rem;" %>
+  </div>
+
+  <br>
+
+  <h3>Results</h3>
+  <% @investigations.each do |inv| %>
+    <ul class="list-group mb-1">
+      <li class="list-group-item list-group-item-action">
+      <%= link_to inv.title.titleize + " - " + inv.description.truncate(80), 
+              investigation_path(inv), 
+              target: "_top" 
+              %>
+      </li>
+    </ul>
+  <% end %>
+</div>
