@@ -1,4 +1,4 @@
-class Investigation
+class InvestigationPoro
   attr_reader :files,
               :reward,
               :aliases,

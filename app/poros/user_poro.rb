@@ -1,4 +1,4 @@
-class User 
+class UserPoro
   attr_reader :first_name,
               :email,
               :password,
