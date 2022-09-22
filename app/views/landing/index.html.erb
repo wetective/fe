@@ -1,3 +1,9 @@
+<% flash.each do |type, msg| %>
+  <div class="alert alert-danger text-center" role="alert">
+    <strong><%= msg %></strong>
+  </div>
+<% end %>
+
 <%= image_tag('wetective-logo.png', class: 'mx-auto d-block', height: '150') %>
 
 <div class='container text-center'>
