@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     end
 
     def find_user
-      @user = User.from_google_auth(request.env['omniauth.auth'])
+      @user = UserFacade.from_google_auth(request.env['omniauth.auth'])
       if @user
         set_session(@user)
         redirect_to user_dashboard_path
