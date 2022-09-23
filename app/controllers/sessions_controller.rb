@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def omniauth
     auth_hash = request.env['omniauth.auth']
     auth_hash[:info][:oauth] = true
+    auth_hash[:info][:password] = 'google_oauth_password' #but what's a better way to do this?
     attributes = UserService.send_user(auth_hash[:info])
     redirect_logic(attributes)
   end

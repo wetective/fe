@@ -8,6 +8,8 @@ class TipsController < ApplicationController
   end
 
   def new
+    @investigation = InvestigationFacade.cities_investigations("Denver").first
+
     @tip = TipFacade.new
   end
 

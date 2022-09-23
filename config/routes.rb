@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get '/register', to: 'sessions#register'
   post '/register', to: 'sessions#user_create'
 
-  # get '/login', to: 'sessions#login'
-  post '/login', to: 'sessions#user_login', as: 'login'
+  get '/login', to: 'sessions#login', as: 'login'
+  post '/login', to: 'sessions#user_login'
   get '/logout', to: 'sessions#destroy'
 
   get '/locations/results', to: 'locations#results', as: 'results'
@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   get '/faq', to: 'basics/faq#index', as: 'faq'
   
   resources :users do
-    get '/dashboard', to: 'user#show', as: 'dashboard'
+    get '/', to: 'users#index', as: 'dashboard'
+    resources :tips
   end
   
   resources :investigations, only: [:index, :show]

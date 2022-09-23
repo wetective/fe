@@ -19,7 +19,7 @@ class InvestigationFacade
     end
   end
 
-  def cities_investigations(city)
+  def self.cities_investigations(city)
     investigations = InvestigationService.get_investigations_by_city(city.downcase.tr(" ", ""))
     investigations.map do |investigation|
       InvestigationPoro.new(investigation)
