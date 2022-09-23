@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   
   get '/login', to: 'sessions#login', as: 'login'
   get '/register', to: 'sessions#register'
-  post '/register', to: 'sessions#create'
-  post '/login', to: 'sessions#create'
+  post '/register', to: 'sessions#user_create'
+  post '/login', to: 'sessions#user_login'
   get '/logout', to: 'sessions#destroy'
 
   get '/locations/results', to: 'locations#results', as: 'results'

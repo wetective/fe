@@ -1,28 +1,24 @@
 class UserService
-    # test / development
+    # actual production URL will need to be set in /config/app_environment_variables.rb
     def self.conn
-        Faraday.new("http://localhost:4999")
+        Faraday.new(ENV["DATABASE_URL"])
     end
-    # production
-    # def self.conn
-    #     Faraday.new("production url")
-    # end
 
-    def self.create_user(data)
+    def self.send_user(data)
         response = conn.post("/api/v1/users/register", {
             email: data[:email],
-            name: data[:name]
+            password: data[:password],
+            oauth: data[:oauth]
         }.to_json, "Content-Type" => "application/json")
-        
         JSON.parse(response.body, symbolize_names: true)
     end
 
-    def self.find_user(data)
-            response = conn.post("/api/v1/users/find", {
+    def self.login_user(data)
+        response = conn.post("/api/v1/users/login", {
             email: data[:email],
-            name: data[:name]
+            password: data[:password],
+            oauth: data[:oauth]
         }.to_json, "Content-Type" => "application/json")
-        
-        JSON.parse(response.body, symbolize_names: true)
-    end
+        JSON.parse(response.body, symbolize_names: true) 
+    end       
 end
