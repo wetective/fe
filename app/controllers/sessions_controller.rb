@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = UserFacade.find_create_user(params)
+    user = UserFacade.find_or_create(params)
     session[:user_id] = user.id
     redirect_to user_dashboard_path(user.id)
     flash[:success] = "Successfully Logged In"

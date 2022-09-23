@@ -1,4 +1,4 @@
-module UsersHelper
+module UserHelper
   def user_avatar(user, options = {})
     if user.avatar?
       image_tag(user.avatar.url, options)

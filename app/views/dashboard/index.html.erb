@@ -1,2 +1,17 @@
-<h1 class='container col-6 text-center'>User Dashboard</h1>
 
+<h3>My Tips</h5>
+  <div class="container $gray-200">
+    <ul class="list">
+      <% @tips.each do |tip| %>
+          <li class="list-item">
+            <div class="card  border-light mb-3" style="max-width: 18rem;">
+              <h5 class="card-header"><%= link_to "#{find_investigation(tip.uid).title}", investigation_path(tip.uid) %></h5>
+              <div class="card-body">
+                <p class="card-text"><%= tip.description %></p>
+                <p class="card-text"><small class="text-muted">Last updated <%= time_ago_in_words(tip.updated_at) %> ago</small></p>
+              </div>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+  </div>
