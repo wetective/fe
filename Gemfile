@@ -50,6 +50,9 @@ gem "pagy"
 # Use font-awesome for icons
 gem 'font-awesome-sass'
 
+# Use APICache to cache api call responses
+gem 'api_cache', '~> 0.3.0'
+
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # gem "webpacker", "~> 5.0"
 
