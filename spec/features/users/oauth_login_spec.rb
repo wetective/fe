@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe "OAuth Login with Google" do 
   context 'happy path' do
     before(:each) do
@@ -20,8 +19,8 @@ RSpec.describe "OAuth Login with Google" do
                                                                          })
       visit '/auth/google_oauth2/callback'
 
-      expect(current_path).to eq('/dashboard')
-      expect(UserFacade.get_users.last.email).to eq('me@example.com')
+      expect(current_path).to eq("/users/#{User.id}/dashboard")
+      expect(User.last.email).to eq('me@example.com')
     end
   end
 end
