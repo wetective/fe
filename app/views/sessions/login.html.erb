@@ -20,6 +20,7 @@
                 <div class="d-grid">
                   <%= form.submit "Login", type: :submit, class: "btn btn-primary btn-login text-uppercase fw-bold" %>
                 </div>
+              <% end %>
                 <hr class="my-3">
                 <div class="d-grid">
                   <a class="oauth-container btn btn-login white black-text shadow-sm rounded" href="/auth/google_oauth2" id="oauth-container" target="_blank">
@@ -31,7 +32,6 @@
                 <div class="mb-2">
                   <%= link_to "Click Here to Sign Up Instead", register_path %>
                 </div>
-            <% end %>
           </div>
         </div>
       </div>
