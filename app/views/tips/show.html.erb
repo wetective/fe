@@ -1,0 +1,7 @@
+<h1>Tip: <%= @tip.uid %></h1>
+<h3>Investigation: <%= @investigation.title %>
+
+<p><%= @tip.description %></p>
+<p>Location: <%= @tip.location %></p>
+<p>Date of occurence: <%= @tip.date %></p>
+<p>Submitted on: <%= @tip.created_at.strftime(%A %m %d) %></p>

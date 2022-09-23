@@ -5,14 +5,19 @@ class TipService
       description: data[:description],
       location: data[:location],
       user_id: data[:user_id]
-    }.to_json, "Content-Type" => "application/json")
+    })
 
     JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.find_tips(user_id)
-    require 'pry'; binding.pry 
     response = conn.get("/api/v1/users/#{user_id}/tips")
+    
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_tip(user_id, tip_id)
+    response = conn.get("/api/v1/users/#{user_id}/tips/#{tip_id}")
     
     JSON.parse(response.body, symbolize_names: true)
   end

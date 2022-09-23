@@ -3,15 +3,13 @@ class TipPoro
               :location,
               :date,
               :description,
-              :time,
               :user_id
               
-  def initialize(attributes)
-    @uid = attributes[:uid]
-    @location = attributes[:location]
-    @date = attributes[:date]
-    @time = attributes[:time]
-    @description = attributes[:description]
-    @user_id = attributes[:user_id]
+  def initialize(tip)
+    @uid = tip[:attributes][:uid]
+    @location = tip[:attributes][:location]
+    @date = tip[:attributes][:date]
+    @description = tip[:attributes][:description]
+    @user_id = tip[:attributes][:user_id]
   end
 end

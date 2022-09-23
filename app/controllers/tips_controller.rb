@@ -2,7 +2,8 @@ class TipsController < ApplicationController
   before_action :set_user_id
   
   def show
-    @tip = TipFacade.get_tip(@user)
+    @tip = TipFacade.get_tip(@user, params[:id])
+    @investigation = InvestigationFacade.get_investigation(@tip.uid)
   end
 
   def new
