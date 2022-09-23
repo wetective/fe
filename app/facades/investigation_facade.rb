@@ -9,10 +9,7 @@ class InvestigationFacade
 
   def self.get_investigation(uid)
     @investigation = InvestigationService.get_investigation_by_uid(uid)
-
-    if @investigation[0][:status] != 'captured' 
-      return @investigation = InvestigationPoro.new(@investigation)
-    end
+    @investigation = InvestigationPoro.new(@investigation)
   end
 
   def self.find_investigation(uid)

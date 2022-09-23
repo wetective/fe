@@ -29,7 +29,7 @@
   <p>Weight: <%= @investigation.weight %><br></p>
   <p>Scars and Marks: <%= @investigation.scars_and_marks %><br></p>
 
-  <%= link_to "Submit a Tip", new_user_tip_path(@user_id, @investigation.uid), params: { uid: @investigation.uid, name: @investigation.title } %>
+  <%= link_to "Submit a Tip", new_user_tip_path(@user, @investigation.uid), params: { uid: @investigation.uid, name: @investigation.title } %>
 </center>
 
 <%= content_for :nav_links do %>
