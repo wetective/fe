@@ -14,13 +14,6 @@ Rails.application.routes.draw do
 
   get '/locations/results', to: 'locations#results', as: 'results'
 
-  resources :users do
-    get '/dashboard', to: 'dashboard#index', as: 'dashboard'
-  end
-  
-  resources :investigations, only: [:index, :show]
-  resources :locations, only: [:index, :show]
-
   get '/team', to: 'basics/team#index', as: 'team'
 
   get '/about', to: 'basics/about#index', as: 'about'
@@ -28,4 +21,11 @@ Rails.application.routes.draw do
   get '/contact', to: 'basics/contact#index', as: 'contact'
 
   get '/faq', to: 'basics/faq#index', as: 'faq'
+  
+  resources :users do
+    get '/dashboard', to: 'dashboard#index', as: 'dashboard'
+  end
+  
+  resources :investigations, only: [:index, :show]
+  resources :locations, only: [:index, :show]
 end
