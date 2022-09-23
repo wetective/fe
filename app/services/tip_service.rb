@@ -11,6 +11,7 @@ class TipService
   end
 
   def self.find_tips(user_id)
+    require 'pry'; binding.pry 
     response = conn.get("/api/v1/users/#{user_id}/tips")
     
     JSON.parse(response.body, symbolize_names: true)
