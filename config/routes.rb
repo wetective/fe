@@ -20,4 +20,12 @@ Rails.application.routes.draw do
   
   resources :investigations, only: [:index, :show]
   resources :locations, only: [:index, :show]
+
+  get '/team', to: 'basics/team#index', as: 'team'
+
+  get '/about', to: 'basics/about#index', as: 'about'
+
+  get '/contact', to: 'basics/contact#index', as: 'contact'
+
+  get '/faq', to: 'basics/faq#index', as: 'faq'
 end

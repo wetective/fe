@@ -10,22 +10,22 @@
               <%= form_with url: register_url, local: true do |form| %>
                 <div class="form-floating mb-3">
                   <%= form.label :email, { for: "floatingInput", hidden: "true"  } %>
-                  <%= form.text_field :email, { class: "form-control", id: "floatingInput", placeholder: "name@example.com", required: true } %>
+                  <%= form.text_field :email, { class: "form-control", id: "floatingInput", required: true, autofocus: true, placeholder: "name@example.com" } %>
                 </div>
                 <div class="form-floating mb-3">
                   <%= form.label :password, { for: "floatingPassword", hidden: "true" } %>
-                  <%= form.text_field :password, { class: "form-control", id: "floatingPassword", placeholder: "Password", type: "password", required: true } %>
+                  <%= form.text_field :password, { class: "form-control", id: "floatingPassword", type: "password", required: true, placeholder: "Password" } %>
                 </div>
                 <div class="form-floating mb-3">
                   <%= form.label :password_confirmation, { for: "floatingPasswordConfirmation", hidden: "true"  } %>
-                  <%= form.text_field :password_confirmation, { class: "form-control", id: "floatingPasswordConfirmation", placeholder: "Password", type: "password", required: true } %>
+                  <%= form.text_field :password_confirmation, { class: "form-control", id: "floatingPasswordConfirmation", type: "password", required: true, placeholder: "Password" } %>
                 </div>
 
                 <div class="d-grid">
                   <%= form.submit "Sign Up", type: :submit, class: "btn btn-primary btn-login text-uppercase fw-bold" %>
                 </div>
               <% end %>
-              
+
                 <hr class="my-3">
                 <div class="d-grid">
                   <a class="oauth-container btn btn-login white black-text shadow-sm rounded" href="/auth/google_oauth2" id="oauth-container" target="_blank">
