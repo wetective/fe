@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
   
-  get '/dashboard', to: 'dashboard#index'
-  
   get '/register', to: 'sessions#register'
   post '/register', to: 'sessions#user_create'
 
@@ -15,7 +13,7 @@ Rails.application.routes.draw do
   get '/locations/results', to: 'locations#results', as: 'results'
 
   resources :users do
-    get '/dashboard', to: 'dashboard#index', as: 'dashboard'
+    get '/dashboard', to: 'user#show', as: 'dashboard'
   end
   
   resources :investigations, only: [:index, :show]
