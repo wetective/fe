@@ -10,7 +10,6 @@ class UserFacade
 
   def self.login(data)
     attributes = UserService.login_user(data)
-
   end
 
   def self.create_user(data)
