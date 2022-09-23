@@ -17,13 +17,12 @@ class TipService
   end
 
   private
-    # test / development
     def self.conn
-      Faraday.new("http://localhost:4999")
+      Faraday.new(ENV["DATABASE_URL"])
     end
 
     # production
-    # def self.conn
-    #     Faraday.new("https://wetective-be.herokuapp.com")
-    # end
+    # see: '/config/app_environment_variables.rb
+    # the routing will automatically change according to current environment 
+    # test/dev vs production
 end

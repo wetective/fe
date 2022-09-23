@@ -64,6 +64,17 @@ body {
   background-color: #bfbfbf92;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50px;
+  width: 50px;
+  outline: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.752);
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
 .leaflet-popup-content-wrapper .leaflet-popup-content {
   font-size: medium;
 }

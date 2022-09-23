@@ -26,7 +26,40 @@ The Wetectives frontend repository ingests the FBI's Most Wanted API, displays m
 
 ## User Experience
 
-![__text__](__link___)
+Once both the front and backends of the app are up and running, a user can navigate to the landing page of the app.
+![landing_page](https://user-images.githubusercontent.com/95403666/191888142-78a1fb60-300e-4e3d-9248-d458068ef924.png)
+
+The top navigation bar has a link to either login
+
+<img width="480" alt="login" src="https://user-images.githubusercontent.com/95403666/191888266-20ded7a8-f7e9-4369-9c10-fd25cc5a9c1c.png">
+
+or sign up to register to become a user.
+
+![sign_up](https://user-images.githubusercontent.com/95403666/191888341-643c2771-d7ee-45f4-a2da-0e0e6a848a65.png)
+
+For ease of access this app implements OAuthentication, allowing the user to register using their google account credentials.
+
+![oauth](https://user-images.githubusercontent.com/95403666/191888509-8e8a6d4c-8328-41fc-8696-0effd618f004.png)
+
+Once successfully logged in a user will then be directed to their user dashboard. If the user has submitted any tips for an active investigation then those tips will be displayed here.
+
+<img width="953" alt="user_dashboard" src="https://user-images.githubusercontent.com/95403666/191889239-23d3b63a-051b-4503-9add-ebafc6a10f85.png">
+
+Now that we are logged into our user account, the nav bar changes (as you can see in the above image). If we click on "Browse" link we are taken to the open investigation index page. This page displays all open investigations in the style of an image carousel.
+
+![browse_investigation_index](https://user-images.githubusercontent.com/95403666/191889514-dbea211e-784e-4f86-9362-6a1975be554e.png)
+
+Clicking on the "See More Details" button will take the user to the show page for that given investigation which displays the poster and pertinent information about the culprit.
+
+![investigation_show](https://user-images.githubusercontent.com/95403666/191889743-7d781ff9-d67f-4841-9842-c7673062b7cc.png)
+
+If a user clicks on the map button in the top navigation bar they will be redirected to the map feature of the app. This displays a map with interactable pins that denote the location for ever FBI field office listed in their API. Clicking on a pin will display a list of open investigations that are associated with that field office. Clicking on one of these investigations will take you to its show page.
+
+<img width="1438" alt="map_with_pins" src="https://user-images.githubusercontent.com/95403666/191890848-3d2e237c-57dd-41f3-978b-18983f11f1fd.png">
+
+
+
+
 
 ## Endpoints
 
