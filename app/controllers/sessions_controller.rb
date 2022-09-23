@@ -1,30 +1,41 @@
 class SessionsController < ApplicationController
   def omniauth
     auth_hash = request.env['omniauth.auth']
-    session[:user_token] = auth_hash[:credentials][:token]
     auth_hash[:info][:oauth] = true
-    binding.pry
-    user = UserFacade.find_create_user(auth_hash[:info])
-    if user
-      redirect_to user_dashboard_path(user.id)
-    else
-      render :new, notice: "Sorry, we could not log you in."
-    end
+    attributes = UserService.send_user(auth_hash[:info])
+    redirect_logic(attributes)
   end
 
-  def new
+  def user_create
+    params[:oauth] = false
+    attributes = UserService.send_user(params)
+    redirect_logic(attributes)
   end
 
-  def create
-    binding.pry
-    user = UserFacade.find_create_user(params)
-    session[:user_id] = user.id
-    redirect_to user_dashboard_path(user.id)
+  def user_login
+    params[:oauth] = false
+    attributes = UserService.login_user(params)
+    redirect_logic(attributes)
   end
 
   def destroy
     session.destroy
-    flash[:success] = "Successfully Logged Out"
     redirect_to root_path
+    flash[:success] = "Successfully Logged Out"
+  end
+
+  private
+  def redirect_logic(attributes)
+    if attributes.has_key?(:data)
+        session[:user_id] = attributes[:data][:id]
+        redirect_to user_dashboard_path(attributes[:data][:id])
+        flash[:message] = "You're logged in"
+    elsif attributes.has_key?(:message)
+        redirect_to request.referrer
+        flash[:alert] = "#{attributes[:message]}"
+    else
+        redirect_to request.referrer
+        flash[:alert] = "Something went wrong"       
+    end
   end
 end
