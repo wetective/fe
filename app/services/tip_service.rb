@@ -1,6 +1,6 @@
 class TipService
   def self.create_tip(data)
-    response = conn.post("/api/v1/user/#{data[:user_id]}/tips/new", {
+    response = conn.post("/api/v1/users/#{data[:user_id]}/tips/new", {
       uid: data[:uid],
       description: data[:description],
       location: data[:location],
@@ -11,15 +11,21 @@ class TipService
   end
 
   def self.find_tips(user_id)
-    response = conn.get("/api/v1/user/#{user_id}/tips")
+    response = conn.get("/api/v1/users/#{user_id}/tips")
     
     JSON.parse(response.body, symbolize_names: true)
   end
 
   private
+    # testing, development
     def self.conn
-      Faraday.new(ENV["DATABASE_URL"])
+      Faraday.new("http://localhost:4999")
     end
+
+    # production
+    # def self.conn
+    #   Faraday.new("https://wetective-be.herokuapp.com")
+    # end
 
     # production
     # see: '/config/app_environment_variables.rb
