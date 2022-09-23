@@ -10,9 +10,9 @@ RSpec.describe "logging in" do
 
         describe 'happy path' do 
             it 'can fill out the email and password and be redirected to the dashboard
-        when the login is successful' do
+            when the login is successful' do
             visit login_path
-            
+            end
 
         end
 
