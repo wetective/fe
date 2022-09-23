@@ -5,7 +5,7 @@
         <div class="carousel-item <%= 'active' if i == 0 %>">
             <%= image_tag investigation.mugshot, size: '500', class: 'mx-auto d-block' %>
             <br>
-            <%= button_to "See More Details", "/investigations/#{investigation.uid}", class: 'mx-auto d-block', method: :get %>
+            <%= button_to "See More Details", "/investigations/#{investigation.uid}", class: 'btn btn-outline-dark mx-auto d-block', method: :get %>
         </div>
       <% end %>
     <% end %>
