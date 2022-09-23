@@ -3,4 +3,3 @@ unless Rails.env.production?
 else
   ENV['DATABASE_URL'] = 'https://wetective-be.herokuapp.com'
 end
-
