@@ -7,7 +7,7 @@
             <br>
             <br>
         </div>
-        <div class="align-center"><%= link_to "See More Details", user_investigation_path(@user_id, @investigation.uid), params: { id: @investigation.uid } %></div>
+        <div class="align-center"><%= link_to "See More Details", user_investigation_path(@user, investigation.uid) %></div>
       <% end %>
     <% end %>
   </div>
