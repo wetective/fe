@@ -1,22 +1,19 @@
 class SessionsController < ApplicationController
   def omniauth
     auth_hash = request.env['omniauth.auth']
-    auth_hash[:info][:oauth] = true
-    auth_hash[:info][:password] = 'google_oauth_password' #but what's a better way to do this?
     session[:google_user_image] = auth_hash[:info][:image]
-    attributes = UserService.send_user(auth_hash[:info])
+    attributes = UserFacade.oauth_user(auth_hash)
     redirect_logic(attributes)
   end
 
   def user_create
     params[:oauth] = false
-    attributes = UserService.send_user(params)
+    attributes = UserFacade.user_create(params)
     redirect_logic(attributes)
   end
 
   def user_login
-    params[:oauth] = false
-    attributes = UserService.login_user(params)
+    attributes = UserFacade.user_login(params)
     redirect_logic(attributes)
   end
 
