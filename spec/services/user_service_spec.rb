@@ -5,7 +5,7 @@ RSpec.describe "User service" do
     
   end
 
-  xit "establishes connection with backend User API", :vcr do
+  xit "establishes connection with backend User API" do
     users = UserService.users
 
     expect(users).to be_a(Hash)
