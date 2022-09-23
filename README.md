@@ -130,12 +130,12 @@ $ rails db:{drop,create,migrate,seed}
 - Finally, in order to use the web app you will have to start the server locally and access the app through a web browser.
 
 ```shell
-$ rails s
+$ rails s-p 4999
 ```
   
 6. You will need to run the [fe](https://github.com/wetective/be) server simultaneously in order for the two parts to be able to talk to each other.
 ```shell
-$ rails s -p 4999
+$ rails s
 ```
 
 - Open web browser and visit link
