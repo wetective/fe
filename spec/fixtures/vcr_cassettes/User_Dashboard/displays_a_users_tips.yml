@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:4999/api/v1/users/register
+    body:
+      encoding: UTF-8
+      string: '{"first_name":"cory","last_name":"bethune","phone":99,"email":"email@email.com","city":"tempe","state":"az","password":"123"}'
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4afdda231246e8de2a63e7df63d2242e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 97d65917-69a3-4728-aec4-d681725afbab
+      X-Runtime:
+      - '0.112859'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"user","attributes":{"email":"email@email.com","first_name":null}}}'
+  recorded_at: Thu, 22 Sep 2022 17:12:07 GMT
+recorded_with: VCR 6.1.0

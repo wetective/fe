@@ -4,13 +4,12 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2', to: 'sessions#create', as: 'oauth_login'
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
   
-  get '/login', to: 'sessions#login', as: 'login'
-  post '/login', to: 'sessions#create'
-
-  get '/logout', to: 'sessions#destroy'
-
   get '/register', to: 'sessions#register'
-  post '/register', to: 'sessions#create'
+  post '/register', to: 'sessions#user_create'
+
+  # get '/login', to: 'sessions#login'
+  post '/login', to: 'sessions#user_login', as: 'login'
+  get '/logout', to: 'sessions#destroy'
 
   get '/locations/results', to: 'locations#results', as: 'results'
 
@@ -23,7 +22,7 @@ Rails.application.routes.draw do
   get '/faq', to: 'basics/faq#index', as: 'faq'
   
   resources :users do
-    get '/dashboard', to: 'dashboard#index', as: 'dashboard'
+    get '/dashboard', to: 'user#show', as: 'dashboard'
   end
   
   resources :investigations, only: [:index, :show]

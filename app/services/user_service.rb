@@ -1,25 +1,25 @@
 class UserService
-  def self.create_user(data)
+  def self.send_user(data)
     response = conn.post("/api/v1/users/register", {
       email: data[:email],
-      name: data[:name]
+      password: data[:password],
+      oauth: data[:oauth]
     }.to_json, "Content-Type" => "application/json")
-    
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.login_user(data)
+    response = conn.post("/api/v1/users/login", {
+      email: data[:email],
+      password: data[:password],
+      oauth: data[:oauth]
+    }.to_json, "Content-Type" => "application/json")
+    JSON.parse(response.body, symbolize_names: true) 
+  end  
 
   def self.find_user(data)
     response = conn.post("/api/v1/users/find", {
       email: data
-    }.to_json, "Content-Type" => "application/json")
-    
-    JSON.parse(response.body, symbolize_names: true)
-  end
-
-  def self.authenticate_user(email, password)
-    response = conn.post("/api/v1/users/authenticate", {
-      email: email,
-      password: password
     }.to_json, "Content-Type" => "application/json")
     
     JSON.parse(response.body, symbolize_names: true)
@@ -34,4 +34,8 @@ class UserService
     # def self.conn
 #     Faraday.new("https://wetective-be.herokuapp.com")
     # end
+    # actual production URL will need to be set in /config/app_environment_variables.rb
+    def self.conn
+        Faraday.new(ENV["DATABASE_URL"])
+    end     
 end

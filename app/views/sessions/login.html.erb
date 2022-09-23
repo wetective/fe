@@ -36,4 +36,9 @@
         </div>
       </div>
     </div>
+    <% flash.each do |type, msg| %>
+        <div class="alert alert-danger text-center" role="alert">
+            <strong><%= msg %></strong>
+        </div>
+    <% end %>
 <% end %>

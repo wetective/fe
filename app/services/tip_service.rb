@@ -12,7 +12,7 @@ class TipService
 
   def self.find_tips(user_id)
     response = conn.get("/api/v1/user/#{user_id}/tips")
-
+    
     JSON.parse(response.body, symbolize_names: true)
   end
 

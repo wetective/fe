@@ -1,4 +1,4 @@
-class TipFacade 
+class TipFacade
   def self.get_tip(tip_id)
     TipService.get_tip(tip_id)
   end
@@ -9,7 +9,6 @@ class TipFacade
 
   def self.users_tips(user_id)
     tips = TipService.find_tips(user_id)
-    binding.pry
     tips.each do |tip|
       Tip.new(tip)
     end

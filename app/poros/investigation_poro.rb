@@ -2,7 +2,7 @@ class InvestigationPoro
   attr_reader :files,
               :reward,
               :aliases,
-              :warning,
+              :warning_message,
               :field_offices,
               :sex,
               :scars_and_marks,
