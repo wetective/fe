@@ -1,4 +1,3 @@
-<<<<<<< HEAD:app/poros/tip_poro.rb
 class TipPoro
   attr_reader :uid,
               :location,
@@ -7,16 +6,6 @@ class TipPoro
               :time,
               :user_id
               
-=======
-class Tip
-  attr_reader :uid,
-              :location,
-              :date,
-              :time,
-              :description,
-              :user_id
-
->>>>>>> main:app/poros/tip.rb
   def initialize(attributes)
     @uid = attributes[:uid]
     @location = attributes[:location]
