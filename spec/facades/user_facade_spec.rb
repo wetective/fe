@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe UserFacade do 
   xit 'creates poro for create user', :vcr do 
     info = {name: "Joe", email: "joe@example.com"}
-    user = UserFacade.find_create_user(info)
+    user = UserFacade.find_or_create(info)
 
     expect(user).to be_a(User)
     expect(user.username).to eq("Joe")

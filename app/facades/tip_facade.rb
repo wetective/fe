@@ -8,9 +8,9 @@ class TipFacade
   end
 
   def self.users_tips(user_id)
-    tips = TipService.find_tips(user_id)
+    tips = TipService.find_tips(user_id.to_i)
     tips.each do |tip|
-      Tip.new(tip)
+      TipPoro.new(tip)
     end
   end
 end

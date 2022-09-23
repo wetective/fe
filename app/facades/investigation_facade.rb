@@ -1,28 +1,24 @@
 class InvestigationFacade
-  def self.create_investigations
+  def self.get_all_investigations
     investigations = InvestigationService.get_investigations
 
     investigations.map do |investigation|
-      if investigation[:status] != 'captured'
-        Investigation.new(investigation)
-      end
+      InvestigationPoro.new(investigation)
     end
   end  
 
-  def self.create_investigation(uid)
-    investigations = InvestigationService.get_investigations
+  def self.get_investigation(uid)
+    @investigation = InvestigationService.get_investigation_by_uid(uid)
 
-    investigations.select do |investigation|
-      if investigation[:status] != 'captured' && investigation[:uid] == uid
-        return Investigation.new(investigation)
-      end
+    if @investigation[0][:status] != 'captured' 
+      return @investigation = InvestigationPoro.new(@investigation)
     end
   end
 
-  def cities_investigations(city)
+  def self.cities_investigations(city)
     investigations = InvestigationService.get_investigations_by_city(city.downcase.tr(" ", ""))
     investigations.map do |investigation|
-      Investigation.new(investigation)
+      InvestigationPoro.new(investigation)
     end
   end
 end

@@ -18,6 +18,7 @@ RSpec.describe "OAuth Login with Google" do
                                                                            }
                                                                          })
       visit '/auth/google_oauth2/callback'
+
       expect(current_path).to eq("/users/#{User.id}/dashboard")
       expect(User.last.email).to eq('me@example.com')
     end

@@ -1,11 +1,13 @@
 class InvestigationsController < ApplicationController
+  before_action :set_user_id
 
   def index
-    @investigations = InvestigationFacade.create_investigations
+    @user_id = params[:user_id]
+    @investigations = InvestigationFacade.get_all_investigations
     @investigations.delete(nil)
   end
   
-  def show
-    @investigation = InvestigationFacade.create_investigation(params[:id])
+  def show    
+    @investigation = InvestigationFacade.get_investigation(params[:id])
   end
 end

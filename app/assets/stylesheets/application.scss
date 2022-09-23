@@ -15,8 +15,53 @@
 
 @import 'bootstrap';
 
+
+h1 {
+  font-family: 'Cairo Play', cursive;
+}
+
+h2 {
+  font-family: 'Cairo Play', cursive;
+}
+
+h3 {
+  font-family: 'Cairo Play', cursive;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+}
+
+.navbar navbar-expand-lg sticky-top shadow-sm p-3 bg-body {
+  background-color: rgb(255, 255, 255);
+}
+
 .nav-link {
-  color: white;
+  color: rgb(0, 0, 0);
+}
+
+#card-background {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.landing_video {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.2;
+  background-repeat: no-repeat;
+}
+
+#oauth-container:hover, #oauth-container:focus, #oauth-container:active, #oauth-container.active {
+  background-color: #bfbfbf92;
 }
 
 .carousel-control-prev-icon,
@@ -34,6 +79,63 @@
   font-size: medium;
 }
 
+.h2.landing {
+  color: white;
+}
+
+.h3.landing {
+  color: white;
+}
+
+.p.landing {
+  color: white;
+}
+
 #city-row {
   display: inline-block;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: black;
+}
+
+btn btn-social-icon btn-instagram rounded {
+  background-color: #000000;
+}
+
+.rounded {
+    border-radius: 5px !important;
+}
+
+footer {
+  background-color: #ffffff;
+  position: relative;
+  padding: 30px 0;
+}
+
+footer .logo-footer {
+  font-size: 28px;
+}
+
+footer.footer-bar {
+  padding: 30px 0;
+}
+
+footer .footer-text {
+  color: #2f2f2f;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+footer .footer-text:hover {
+  color: #a0a0a0;
 }
