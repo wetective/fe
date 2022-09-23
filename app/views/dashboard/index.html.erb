@@ -2,3 +2,9 @@
 <% if session[:user_token] %>
     <p>YOU'RE LOGGED IN</p>
 <% end %>
+
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-info text-center">
+        <%= msg %>
+      </div>
+    <% end %>
