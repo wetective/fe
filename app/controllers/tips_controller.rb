@@ -1,10 +1,8 @@
 class TipsController < ApplicationController
-  def index
-    @tips = TipFacade.find_tips(params[:id])
-  end
+  before_action :set_user_id
   
   def show
-    @tip = TipFacade.get_tip(params[:id])
+    @tip = TipFacade.get_tip(@user)
   end
 
   def new

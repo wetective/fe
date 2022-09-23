@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+  before_action :set_user_id
+
   def index
     @locations = Location.all
     if params[:city]

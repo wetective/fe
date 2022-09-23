@@ -7,18 +7,6 @@ class SessionsController < ApplicationController
     redirect_logic(attributes)
   end
 
-<<<<<<< HEAD
-  def new
-    @user ||= UserFacade.find_user(params[:email])
-    session[:user] = @user
-  end
-
-  def create
-    user = UserFacade.find_or_create(params)
-    session[:user_id] = user.id
-    redirect_to user_dashboard_path(user.id)
-    flash[:success] = "Successfully Logged In"
-=======
   def user_create
     params[:oauth] = false
     attributes = UserService.send_user(params)
@@ -29,7 +17,6 @@ class SessionsController < ApplicationController
     params[:oauth] = false
     attributes = UserService.login_user(params)
     redirect_logic(attributes)
->>>>>>> main
   end
 
   def destroy
@@ -40,29 +27,6 @@ class SessionsController < ApplicationController
   end
 
   private
-<<<<<<< HEAD
-    def user_params
-      params.permit(:email, :password)
-    end
-
-    def find_user
-      @user = UserFacade.find_user(request.env['omniauth.auth'][:info][:email])
-      if @user
-        set_session(@user)
-        redirect_to user_dashboard_path
-      else
-        redirect_to login_path, notice: "Sorry, your we could not log you in."
-      end
-    end
-
-    def set_session(user)
-      session[:user_id] = user.id
-      session[:email] = user.email
-      # session[:image] = user.image
-      session[:first_name] = user.username.split.first
-      session[:last_name] = user.username.split.last
-    end
-=======
   def redirect_logic(attributes)
     if attributes.has_key?(:data)
         session[:user_id] = attributes[:data][:id]
@@ -76,5 +40,4 @@ class SessionsController < ApplicationController
         flash[:alert] = "Something went wrong"       
     end
   end
->>>>>>> main
 end

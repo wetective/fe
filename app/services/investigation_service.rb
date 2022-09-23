@@ -11,10 +11,10 @@ class InvestigationService
 
   def self.get_investigations
     url = "wanted/v1/list?status=na"
-    ApiRequest.cache(url, ) do
-      response = conn.get
+    # ApiRequest.cache(url, ) do
+      response = conn.get(url)
       investigations = JSON.parse(response.body, symbolize_names: true)
-    end
+    # end
     total_investigations = investigations[:total]
     all_data = []
     i = 1

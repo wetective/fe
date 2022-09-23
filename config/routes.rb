@@ -23,9 +23,8 @@ Rails.application.routes.draw do
   
   resources :users do
     get '/', to: 'users#index', as: 'dashboard'
-    # get '/investigation/:id', to: 'investigations#show'
     resources :tips
-    resources :investigations, only: [:index, :show]
-    resources :locations, only: [:index, :show]
+    resources :investigations
+    resources :locations
   end
 end
