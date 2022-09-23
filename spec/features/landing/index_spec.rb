@@ -37,5 +37,25 @@ RSpec.describe 'The Landing Index Page' do
         expect(page).to have_link('Logout', href: logout_path) 
       end
     end
+
+    it 'displays a flash message when a user logs out' do
+      attrs = {
+        attributes: { 
+          email: "blakesaylor@email.com" 
+        },
+        id: 123
+      }
+
+      user1 = User.new(attrs)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)    
+
+      visit root_path
+
+      click_link "Logout"
+
+      expect(current_path).to eq root_path
+      expect(page).to have_content "Successfully Logged Out"
+    end
   end
 end

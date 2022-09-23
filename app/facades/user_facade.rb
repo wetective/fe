@@ -1,3 +1,4 @@
+
 class UserFacade 
   def self.find_and_authenticate(email, password)
     unless email == nil || password == nil
@@ -37,14 +38,23 @@ class UserFacade
     end
   end
 
-  def self.login(data)
-    attributes = UserService.login_user(data)
+  def self.find_create_user(data)
+    attributes = UserService.send_user(data)
+    User.new(attributes[:data]) if attributes[:data]
+    attributes
   end
 
-  def self.create_user(data)
-    unless data == nil
-      user = UserService.create_user(data)
-      @user = User.new(user[:data])
-    end
+  def self.user_login(params)
+    params[:oauth] = false
+    attributes = UserService.login_user(params)
+    User.new(attributes[:data]) if attributes[:data]
+    attributes
   end
+  
+#   def self.create_user(data)
+#     unless data == nil
+#       user = UserService.create_user(data)
+#       @user = User.new(user[:data])
+#     end
+#   end
 end

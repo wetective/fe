@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "User service" do
-  xit "establishes connection with backend User API", :vcr do
+  before do
+    
+  end
+
+  xit "establishes connection with backend User API" do
     users = UserService.users
 
     expect(users).to be_a(Hash)

@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe "OAuth Login with Google" do 
   context 'happy path' do
     before(:each) do
