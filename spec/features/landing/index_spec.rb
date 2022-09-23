@@ -33,7 +33,7 @@ RSpec.describe 'The Landing Index Page' do
         expect(page).to have_css("img[src*='/assets/wetective-logo']")
         expect(page).to have_link(href: root_path)
         expect(page).to have_link('Map', href: user_locations_path) 
-        expect(page).to have_link('Browse', href: user_investigations_path) 
+        expect(page).to have_link('Browse', href: user_investigations_path(user1.id)) 
         expect(page).to have_link('Logout', href: logout_path) 
       end
     end

@@ -32,15 +32,6 @@
       </div>
     </div>
   </div>
-  <% if current_user %>
-    <h1 align='center'>
-      <%= button_to "Browse Open Cases", investigations_path, method: :get, class: "btn btn-outline-primary my-1" %>
-    </h1>
-  <% else %>
-    <h1 align='center'>
-      <%= button_to "Login to Browse Open Cases", login_path, method: :get, class: "btn btn-outline-primary my-1" %>
-    </h1>
-  <% end %>
 </div>
 
 <% if current_user %>
