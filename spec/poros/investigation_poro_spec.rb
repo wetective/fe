@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe Investigation do
+RSpec.describe InvestigationPoro do
   xit 'exists and has attributes' do
     data = JSON.parse(File.read('spec/fixtures/fbi_investigations_response.json'), symbolize_names: true)[:items][0]
 
     investigation = InvestigationPoro.new(data)
 
-    expect(investigation).to be_a(Investigation)
+    expect(investigation).to be_a(InvestigationPoro)
     expect(investigation.files).to eq("https://www.fbi.gov/wanted/wcc/christopher-c-gardner/download.pdf")
     expect(investigation.reward).to eq("The FBI is offering a reward of up to $10,000 for information leading to the arrest of Christopher Gardner.")
     expect(investigation.aliases).to eq("Chris Gardner, Christopher Charles Gardner")
