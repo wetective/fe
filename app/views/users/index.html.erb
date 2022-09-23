@@ -1,19 +1,19 @@
 
 <h3>My Tips</h5>
   <div class="container $gray-200">
-    <ul class="list">
+    <div class="list">
       <% @tips.each do |tip| %>
-          <li class="list-item">
-            <div class="card  border-light mb-3" style="max-width: 18rem;">
-              <h5 class="card-header"><%= link_to "#{find_investigation(tip.uid).title}", investigation_path(tip.uid) %></h5>
+          <div class="list-item">
+            <div class="card  border-light mb-3"">
+              <h5 class="card-header"><%= link_to "#{find_investigation(tip.uid).title}", user_investigation_path(@user, tip.uid) %></h5>
               <div class="card-body">
                 <p class="card-text"><%= tip.description %></p>
                 <p class="card-text"><small class="text-muted">Last updated <%= time_ago_in_words(tip.updated_at) %> ago</small></p>
               </div>
             </div>
-          </li>
+          </div>
       <% end %>
-    </ul>
+    </div>
   </div>
 
 <%= content_for :nav_links do %>

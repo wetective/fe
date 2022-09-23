@@ -15,6 +15,10 @@ class InvestigationFacade
     end
   end
 
+  def self.find_investigation(uid)
+    @investigation = InvestigationService.get_investigation_by_uid(uid)
+  end
+
   def self.cities_investigations(city)
     investigations = InvestigationService.get_investigations_by_city(city.downcase.tr(" ", ""))
     investigations.map do |investigation|

@@ -5,7 +5,6 @@ RSpec.describe TipFacade do
     context 'happy path' do
       it 'can create a new tip' do
         tip = TipFacade.create_tip(uid: 1234, description: "This is a test", location: "Denver, CO", user_id: 1)
-        require 'pry'; binding.pry 
         
         expect(tip.files).to be_a(String)
         expect(tip.reward).to be_a(String)

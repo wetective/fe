@@ -9,8 +9,8 @@ class TipFacade
 
   def self.users_tips(user_id)
     tips = TipService.find_tips(user_id.to_i)
-    tips[:data].each do |tip|
-      TipPoro.new(tip)
+     tips = tips[:data].map do |tip|
+      TipPoro.new(tip[:attributes])
     end
   end
 end

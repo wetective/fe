@@ -1,12 +1,12 @@
 class InvestigationService
   def self.get_investigations_by_city(city)
     response = conn.get("wanted/v1/list?field_offices=#{city}")
-    JSON.parse(response.body, symbolize_names: true)[:items]
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.get_investigation_by_uid(uid)
-    response = conn.get("wanted/v1/list?uid=#{uid}")
-    JSON.parse(response.body, symbolize_names: true)[:items]
+    response = conn.get("@wanted-person/#{uid}")
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.get_investigations
