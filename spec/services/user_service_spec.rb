@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "User service" do
   before do
-    @user = 
+    
   end
 
   xit "establishes connection with backend User API", :vcr do
