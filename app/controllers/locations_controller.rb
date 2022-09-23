@@ -3,7 +3,7 @@ class LocationsController < ApplicationController
     @locations = Location.all
     if params[:city]
       @location = params[:city]
-      @investigations = InvestigationFacade.new.cities_investigations(@location)
+      @investigations = InvestigationFacade.cities_investigations(@location)
       # @pagy, @investigations = pagy(@investigations, items: 15)
     end
   end

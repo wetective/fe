@@ -8,6 +8,7 @@ class TipsController < ApplicationController
   end
 
   def new
+    @investigation = InvestigationFacade.get_investigation(params[:uid])
     @investigation = InvestigationFacade.cities_investigations("Denver").first
 
     @tip = TipFacade.new

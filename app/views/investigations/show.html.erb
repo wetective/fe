@@ -2,7 +2,10 @@
 <br><br>
 
   <div class="pdf">
-    <iframe src="http://docs.google.com/gview?url=<%= @investigation.files %>&embedded=true" style="width:818px; height:800px;" frameborder="0"></iframe>
+    <% if @investigation.files %>
+      <iframe src="http://docs.google.com/gview?url=<%= @investigation.files %>&embedded=true" style="width:818px; height:800px;" frameborder="0">
+      </iframe>
+    <% end %>
   </div>
   
   <h1>WANTED: <%= @investigation.title %></h1>
@@ -25,4 +28,6 @@
   <p>Eye Color: <%= @investigation.eyes %><br></p>
   <p>Weight: <%= @investigation.weight %><br></p>
   <p>Scars and Marks: <%= @investigation.scars_and_marks %><br></p>
+
+  <%= link_to "Submit a Tip", new_user_tip_path(@user_id, @investigation.uid), params: { uid: @investigation.uid, name: @investigation.title } %>
 </center>

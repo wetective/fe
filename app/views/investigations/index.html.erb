@@ -1,11 +1,12 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <% @investigations.each_with_index do |investigation, i| %>
+    <% @investigation = investigation %>
       <% if investigation.status != "recovered" %>
         <div class="carousel-item <%= 'active' if i == 0 %>">
             <%= image_tag investigation.mugshot, size: '500', class: 'mx-auto d-block' %>
             <br>
-            <%= button_to "See More Details", "/investigations/#{investigation.uid}", class: 'mx-auto d-block', method: :get %>
+            <br>
         </div>
       <% end %>
     <% end %>
@@ -19,3 +20,5 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+<div class="align-center"><%= link_to "See More Details", user_investigation_path(@user_id, @investigation.uid), params: { id: @investigation.uid } %></div>

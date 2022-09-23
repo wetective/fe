@@ -1,10 +1,15 @@
 class InvestigationsController < ApplicationController
   def index
-    @investigations = InvestigationFacade.create_investigations
+    @user_id = params[:user_id]
+    @investigations = InvestigationFacade.get_all_investigations
+    require 'pry'; binding.pry 
     @investigations.delete(nil)
+    require 'pry'; binding.pry 
   end
   
   def show
-    @investigation = InvestigationFacade.create_investigation(params[:id])
+    @user_id = params[:user_id]
+    
+    @investigation = InvestigationFacade.get_investigation(params[:id])
   end
 end
