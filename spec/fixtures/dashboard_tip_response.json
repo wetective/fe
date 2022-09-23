@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "tip",
+            "attributes": {
+                "uid": 1234,
+                "location": "Kansas",
+                "description": "it was bad",
+                "user_id": 1
+            }
+        },
+        {
+            "id": "2",
+            "type": "tip",
+            "attributes": {
+                "uid": 1234,
+                "location": "Kansas",
+                "description": "it was bad",
+                "user_id": 1
+            }
+        },
+        {
+            "id": "3",
+            "type": "tip",
+            "attributes": {
+                "uid": 5678,
+                "location": "Germany",
+                "description": "shcetes vette heute",
+                "user_id": 1
+            }
+        },
+        {
+            "id": "4",
+            "type": "tip",
+            "attributes": {
+                "uid": 1234,
+                "location": "London",
+                "description": "cheerio",
+                "user_id": 1
+            }
+        }
+    ]
+}

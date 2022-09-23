@@ -1,4 +1,11 @@
 class Tip
+  attr_reader :uid,
+              :location,
+              :date,
+              :time,
+              :description,
+              :user_id
+
   def initialize(attributes)
     @uid = attributes[:uid]
     @location = attributes[:location]
