@@ -27,6 +27,11 @@
 
     <div class="container">
       <p id="message"><%= notice || alert %></p>
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-danger text-center" role="alert">
+            <strong><%= msg %></strong>
+        </div>
+      <% end %>
       
       <div class="card border-0" id="card-background">
         <div class="card-body p-4">

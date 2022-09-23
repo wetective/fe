@@ -8,7 +8,9 @@ class TipFacade
   end
 
   def self.users_tips(user_id)
+    require 'pry'; binding.pry 
     tips = TipService.find_tips(user_id)
+    require 'pry'; binding.pry 
     tips.each do |tip|
       TipPoro.new(tip)
     end
