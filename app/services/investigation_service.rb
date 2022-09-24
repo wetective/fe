@@ -9,24 +9,9 @@ class InvestigationService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.get_investigations
-    url = "wanted/v1/list?status=na"
-    # ApiRequest.cache(url, ) do
-      response = conn.get(url)
-      investigations = JSON.parse(response.body, symbolize_names: true)
-    # end
-    total_investigations = investigations[:total]
-    all_data = []
-    i = 1
-
-    until all_data.count >= total_investigations
-      response_2 = conn.get("wanted/v1/list?status=na&page=#{i}&pageSize=50")
-      all_data << JSON.parse(response_2.body, symbolize_names: true)[:items]
-      i += 1
-      all_data.flatten!
-    end
-
-    all_data
+  def self.get_open_investigations(page)
+    response = conn.get("@wanted?pageSize=20&page=#{page}&sort_on=modified&sort_order=desc&status=na")
+    investigations = JSON.parse(response.body, symbolize_names: true)
   end
 
   private

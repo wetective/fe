@@ -1,36 +1,20 @@
-<center>
-<br><br>
+<div class="row">
+  <div class="mx-auto">
+    <div class="card border-0 shadow rounded-3">
+      <div class="card-body">
 
-  <div class="pdf">
-    <% if @investigation.files %>
-      <iframe src="http://docs.google.com/gview?url=<%= @investigation.files %>&embedded=true" style="width:818px; height:800px;" frameborder="0">
-      </iframe>
-    <% end %>
+        <h1>WANTED:</h1> 
+        <p><%= @investigation.title %></p>
+
+        <%= render 'inv_tabs' %>
+
+        <br>
+
+        <%= link_to "Submit a Tip", new_user_tip_path(@user), class: "btn btn-outline-danger", params: { uid: "#{@investigation.uid}", name: "#{@investigation.title}" } %>
+      </div>
+    </div>
   </div>
-  
-  <h1>WANTED: <%= @investigation.title %></h1>
-
-  <h2><%= @investigation.subjects %><br></h2>
-  <h3>Reward: <%= @investigation.reward %><br></h3>
-
-  <p>Alias: <%= @investigation.aliases %><br></p>
-  <p>Field Office: <%= @investigation.field_offices.capitalize %><br></p>
-
-  <p>Caution: <%= @investigation.caution %><br></p>
-  <p>Description: <%= @investigation.description %><br></p>
-  <p>Warning: <%= @investigation.warning_message %><br></p>
-  <p>Status: <%= @investigation.status %><br></p>
-
-  <p>Date of Birth Used: <%= @investigation.dates_of_birth_used %><br></p>
-  <p>Sex: <%= @investigation.sex %><br></p>
-  <p>Race: <%= @investigation.race.capitalize %><br></p>
-  <p>Hair Color: <%= @investigation.hair %><br></p>
-  <p>Eye Color: <%= @investigation.eyes %><br></p>
-  <p>Weight: <%= @investigation.weight %><br></p>
-  <p>Scars and Marks: <%= @investigation.scars_and_marks %><br></p>
-
-  <%= link_to "Submit a Tip", new_user_tip_path(@user, @investigation.uid), params: { uid: @investigation.uid, name: @investigation.title } %>
-</center>
+</div>
 
 <%= content_for :nav_links do %>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">

@@ -1,0 +1,107 @@
+<div class="card">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href="#descr" data-bs-toggle="tab">Description</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#traits" data-bs-toggle="tab">Traits</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#alerts" data-bs-toggle="tab">Alerts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#rewards" data-bs-toggle="tab">Reward</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#subjects" data-bs-toggle="tab">Subjects</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <div class="tab-content">
+      <div class="tab-pane" id="descr">
+        <p class="card-text me-auto"><%= @investigation.description %><%= @investigation.status %></p>
+      </div>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane" id="traits">
+        <table class="card-text me-auto">
+          <tr class="row"><thead>
+            <th class="col-2"> Alias(es) </th>
+            <th class="col-2"> Dates of Birth Used </th>
+            <th class="col-1"> Sex </th>
+            <th class="col-1"> Race </th>
+            <th class="col-1"> Hair Color </th>
+            <th class="col-1"> Eyes </th>
+            <th class="col-1"> Weight </th>
+            <th class="col-2"> Scars and Marks </th>
+          </thead></tr>
+          <tr class="row"><tbody>
+            <th class="col-2">
+              <%= @investigation.aliases %>
+            </th>
+            <th class="col-2">
+              <%= @investigation.dates_of_birth_used[0] %>
+            </th>
+            <th class="col-1">
+              <%= @investigation.sex %>
+            </th>
+            <th class="col-1">
+              <%= @investigation.race.capitalize %>
+            </th>
+            <th class="col-1">
+              <%= @investigation.hair %>
+            </th>
+            <th class="col-1">
+              <%= @investigation.eyes %>
+            </th>
+            <th class="col-1">
+              <%= @investigation.weight %> lb.
+            </th>
+            <th class="col-2">
+              <%= @investigation.scars_and_marks %>
+            </th>
+          </tbody></tr>
+        </table>
+      </div>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane fade" id="alerts">
+        <table class="card-text me-auto">
+          <tr class="row"><thead>
+            <th class="col-1">Warning</th>
+            <th class="col-1">Caution</th>
+          </thead></tr>
+          <tr class="row"><tbody>
+            <th class="col-1">
+              <%= @investigation.warning_message %>
+            </th>
+            <th class="col-1">
+              <%= @investigation.caution %>
+            </th>
+          </tbody></tr>
+        </table>
+      </div>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane fade" id="reward">
+        <div class="card-text me-auto">
+          <h5>Reward</h5>
+          <p>$<%= @investigation.reward %></p>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane fade" id="subjects">
+        <div class="card-text me-auto">
+          <ul>
+            <% @investigation.subjects.map do |sub| %>
+              <li><%= sub %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

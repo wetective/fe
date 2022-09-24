@@ -1,0 +1,19 @@
+  <% if @investigation.files.is_a?(InvestigationPoro) %>
+    <div class="pdf">
+      <iframe src="http://docs.google.com/gview?url=<%= @investigation.files %>&embedded=true" style="width:100px;" frameborder="0">
+      </iframe>
+    </div>
+  <% else %>
+    <% @investigation.images.each do |img| %>
+      <% if image_link_check(img[:original]) == 200 %>
+        <figure>
+          <%= image_tag(img[:original], class: 'mx-auto d-block', width: '150') %>
+          <figcaption><%= img[:caption] %></figcaption>
+        </figure>
+      <% else %>
+        <figure>
+          <%= image_tag(random_dog, class: 'mx-auto d-block', width: '150') %>
+          <figcaption><%= img[:caption] %></figcaption>
+        </figure>
+    <% end %>
+  <% end %>

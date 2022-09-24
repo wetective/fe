@@ -1,8 +1,8 @@
 class InvestigationFacade
-  def self.get_all_investigations
-    investigations = InvestigationService.get_investigations
+  def self.get_all_investigations(page)
+    investigations = InvestigationService.get_open_investigations(page)
 
-    investigations.map do |investigation|
+    investigations[:items].map do |investigation|
       InvestigationPoro.new(investigation)
     end
   end  

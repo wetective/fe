@@ -1,13 +1,14 @@
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide">
   <div class="carousel-inner">
-    <% @investigations.shuffle.each_with_index do |investigation, i| %>
-        <div class="carousel-item <%= 'active' if i == 0 %>">
-            <%= image_tag investigation.mugshot, size: '500', class: 'mx-auto d-block' %>
-            <br>
-            <br>
-        </div>
-        <br>
-        <div class="position-center"><%= link_to "See More Details", user_investigation_path(@user, investigation.uid) %></div>
+    <% until @investigations.empty? %>
+      <div class="carousel-item active">
+        <% @investigation = @investigations.pop 
+            until @investigation.mugshot != nil 
+              @investigation = @investigations.pop
+            end 
+        %>
+        <%= image_url "#{@investigation.mugshot}", height: '500', class: 'mx-auto d-block' %>
+      </div>
     <% end %>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -19,3 +20,4 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+    <div class="position-center"><%= link_to "See More Details", user_investigation_path(@user, @investigation.uid), class: "btn btn-danger rounded align-center" %></div>
