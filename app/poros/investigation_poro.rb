@@ -39,14 +39,8 @@ class InvestigationPoro
     @status = nil_to_s(data[:status])
     @subjects = nil_to_s(data[:subjects])
     @dates_of_birth_used = nil_to_s(data[:dates_of_birth_used])
-    @images = data[:images]
-    @mugshot = find_image(data[:images])
-  end
-
-  def find_image(data)
-    data.each do |image|
-      image[:original].end_with?('.jpg' || '.jpeg' || '.png') ? @mugshot = image[:original] : nil
-    end
+    @images = nil_to_s(data[:images])
+    @mugshot = nil_to_s(data[:images][1])
   end
 
   def nil_to_s(key)

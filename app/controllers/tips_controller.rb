@@ -7,6 +7,7 @@ class TipsController < ApplicationController
   end
 
   def new
+    require 'pry'; binding.pry 
     @investigation = InvestigationFacade.get_investigation(params[:uid])
     @investigation = InvestigationFacade.cities_investigations("Denver").first
 

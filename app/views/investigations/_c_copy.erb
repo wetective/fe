@@ -1,0 +1,22 @@
+<div id="carouselExampleControls" class="carousel slide">
+  <div class="carousel-inner">
+    <% until @investigations.empty? %>
+      <div class="carousel-item active">
+        <%= if @investigations.last.mugshot[:original] != "nil" 
+              @investigation = @investigations.pop
+            end 
+          image_url "#{@investigation.mugshot[:original]}", height: '500', class: 'mx-auto d-block'
+        %>
+      </div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    <div class="position-center"><%= link_to "See More Details", user_investigation_path(@user, @investigation.uid), class: "btn btn-danger rounded" %></div>
