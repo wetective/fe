@@ -1,5 +1,7 @@
 class InvestigationsController < ApplicationController
   include AnimalHelper
+  include Displayable
+  
   before_action :set_user_id
 
   def index
